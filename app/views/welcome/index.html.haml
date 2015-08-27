@@ -1,0 +1,8 @@
+%h1 Welcome Page
+
+- if flash[:alert] == 'You have to confirm your email address before continuing.'
+  .notice= flash[:alert]
+
+%br
+- unless current_user
+  = link_to 'Sign in with Facebook', user_omniauth_authorize_path(:facebook)

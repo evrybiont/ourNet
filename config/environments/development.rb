@@ -36,6 +36,19 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.mandrillapp.com',
+    :port => 587,
+    :user_name => 'evrybiont@gmail.com',
+    :password => 'C7G7qn85ZEK7TNwo3V06jg',
+    :domain => 'yourdomain.com',
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 end
