@@ -1,7 +1,7 @@
 %h1 Welcome Page
 
 - if flash[:alert] == 'You have to confirm your email address before continuing.'
-  .notice= flash[:alert]
+  .notice= flash[:alert] + ' Delivery of mail will take a long time!'
 
 %br
 - unless current_user
