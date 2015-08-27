@@ -27,8 +27,8 @@ module Ournet
 
     # Facebook credentials
     config.facebook = {
-      APP_ID: '1640201769596089',
-      APP_SECRET: 'bf90da3e8617514751aeba394bf9f6ea'
+      APP_ID: ENV['FACEBOOK_APP_ID'],
+      APP_SECRET: ENV['FACEBOOK_SECRET']
     }
   end
 end
