@@ -22,5 +22,13 @@ module Ournet
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.autoload_paths << Rails.root.join('lib')
+
+    # Facebook credentials
+    config.facebook = {
+      APP_ID: '1640201769596089',
+      APP_SECRET: 'bf90da3e8617514751aeba394bf9f6ea'
+    }
   end
 end
