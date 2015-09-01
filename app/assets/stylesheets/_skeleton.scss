@@ -86,7 +86,11 @@ $global-radius: 4px !default;
   box-sizing: border-box;
 }
 
-.auto-align {
+.nav-auto-align {
+  text-align: center;
+}
+
+.align-c {
   text-align: center;
 }
 
@@ -97,7 +101,7 @@ $global-radius: 4px !default;
     padding: 0;
   }
 
-  .auto-align {
+  .nav-auto-align {
     text-align: right;
   }
 }

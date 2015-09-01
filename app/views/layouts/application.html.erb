@@ -8,6 +8,14 @@
 </head>
 <body>
   <%= render 'layouts/box/navbar' %>
-  <%= yield %>
+  <div class='container stuff'>
+    <hr>
+    <div class='row'>
+      <%= render 'layouts/box/sidebar' %>
+      <div class='ten columns yield'>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
