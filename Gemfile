@@ -11,7 +11,6 @@ gem 'pry'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '~> 5.0'
 
 group :development, :test do
