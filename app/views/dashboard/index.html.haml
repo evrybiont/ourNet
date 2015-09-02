@@ -1,5 +1,9 @@
-- @members.each do |member|
-  .member.two.columns.align-c
-    = link_to '#', class: '' do
-      = image_tag member.image
-    %div= member.name
+- step = 0
+
+- while @members[step]
+  .row.members
+    - 4.times do |i|
+      - if @members[i + step].nil?
+        - break
+      = render partial: 'member', locals: {member: @members[i + step]}
+    - step += 4
