@@ -86,7 +86,7 @@ $global-radius: 4px !default;
   box-sizing: border-box;
 }
 
-.nav-auto-align {
+.nav-auto-align, .nav-logo-gn {
   text-align: center;
 }
 
@@ -101,7 +101,7 @@ $global-radius: 4px !default;
     padding: 0;
   }
 
-  .nav-auto-align {
+  .nav-auto-align, .nav-logo-gn {
     text-align: center;
   }
 }
@@ -110,6 +110,10 @@ $global-radius: 4px !default;
 @media (#{$bp-larger-than-phablet}) {
   .nav-auto-align {
     text-align: right;
+  }
+
+  .nav-logo-gn {
+    text-align: none;
   }
 
   .container {
