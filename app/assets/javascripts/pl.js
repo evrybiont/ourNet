@@ -85,6 +85,7 @@ PL = {
   drowPlayList: function(){
     $.each(PL.data, function(i,v){
       $("#play_list").append("<div class='record'><div id=" + i + " class='play'></div><div class='track_name'>" + v.name);
+      $("#" + i).next().attr('title', v.name)
     })
   },
 
