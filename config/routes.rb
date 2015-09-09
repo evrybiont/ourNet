@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index
   resources :users, only: :index
   resources :welcome, only: :index
+  resources :music, only: :index
+  resources :videos, only: :index
+  resources :photos, only: :index
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

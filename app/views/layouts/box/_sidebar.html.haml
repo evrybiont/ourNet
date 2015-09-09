@@ -1,5 +1,6 @@
 .two.columns.sidebar
-  = link_to 'Members', '#', class: "button twelve columns #{active('dashboard')}"
-  = link_to 'Action1', '#', class: "button twelve columns #{active('')}"
-  = link_to 'Action2', '#', class: "button twelve columns #{active('')}"
-  = link_to 'Action3', '#', class: "button twelve columns #{active('')}"
+  = link_to 'Dashboard', root_path, class: "button twelve columns #{active('dashboard')}"
+  = link_to 'Users', users_path, class: "button twelve columns #{active('users')}"
+  = link_to 'Music', music_index_path, class: "button twelve columns #{active('music')}"
+  = link_to 'Videos', videos_path, class: "button twelve columns #{active('videos')}"
+  = link_to 'Photos', photos_path, class: "button twelve columns #{active('photos')}"
