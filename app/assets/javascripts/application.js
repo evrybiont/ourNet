@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+window.addEventListener("load", function(){
+  if (window.File && window.FileReader && window.FileList && window.Blob) {}
+    else { alert("The File APIs are not fully supported in this browser."); }
+  $("#files").change(handleMultipleSelect);
+});
+
+function handleMultipleSelect(e) {
+    PL.set(e.target.files);
+}
