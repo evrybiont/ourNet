@@ -16,6 +16,6 @@ test:
 
 production:
   <<: *default
-  database: ournet_production
-  username: ournet
+  database: ukraine_custom_culture_production
+  username: ukraine_custom_culture
   password: <%= ENV['OURNET_DATABASE_PASSWORD'] %>
