@@ -79,14 +79,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.default_url_options = {host: 'damp-temple-3694.herokuapp.com'}
+  config.action_mailer.default_url_options = {host: 'ukraine-custom-culture.herokuapp.com'}
 
   ActionMailer::Base.smtp_settings = {
     address: 'smtp.mandrillapp.com',
     port: 587,
     user_name: 'evrybiont@gmail.com',
-    password: 'C7G7qn85ZEK7TNwo3V06jg',
-    domain: 'damp-temple-3694.herokuapp.com.com',
+    password: 'W10JcJEmpKaJq3VqvUmhcg',
+    domain: 'ukraine-custom-culture.herokuapp.com',
     authentication: 'login',
     enable_starttls_auto: true
   }
