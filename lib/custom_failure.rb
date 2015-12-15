@@ -1,6 +1,6 @@
 class CustomFailure < Devise::FailureApp
   def redirect_url
-    welcome_index_path
+    dashboards_path
   end
 
   def respond

@@ -5,11 +5,10 @@ Rails.application.routes.draw do
     #delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   #end
 
-  root 'dashboard#index'
+  root 'dashboards#index'
 
-  resources :dashboard, only: :index
+  resources :dashboards, only: :index
   resources :users, only: :index
-  resources :welcome, only: :index
   resources :music, only: :index
   resources :videos, only: :index
   resources :photos, only: :index
