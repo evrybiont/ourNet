@@ -1,13 +1,15 @@
 .container.navbar
   .row.gn-c
-    %span Ukraine Custom Culture
+    %span.main-title Ukraine Custom Culture (BETA VERSION)
   .row
-    .two.columns.nav-logo-gn
+    .four.columns.nav-logo-gn
       = link_to root_path, class: 'navbar-brand' do
-        = image_tag 'wolf2.jpg', class: 'nav-logo'
+        = image_tag 'logo.jpg', class: 'nav-logo'
 
-    .ten.columns.nav-menu.nav-auto-align
+    .eight.columns.nav-menu.nav-auto-align
       - if current_user
-        = link_to "#{current_user.name} Sign Out", destroy_user_session_path, method: 'delete', class: 'button'
+        = link_to destroy_user_session_path, method: 'delete' do
+          = fa_icon 'sign-out 2x', class: 'black-color'
       - else
-        = link_to 'Sign in with Facebook', user_omniauth_authorize_path(:facebook)
+        = link_to user_omniauth_authorize_path(:facebook) do
+          = fa_icon 'facebook-square 2x', class: 'black-color'

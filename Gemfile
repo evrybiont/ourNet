@@ -13,6 +13,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'sass-rails', '~> 5.0'
 gem 'knack-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'

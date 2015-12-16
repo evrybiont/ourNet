@@ -46,7 +46,7 @@ Rails.application.configure do
     :address => 'smtp.mandrillapp.com',
     :port => 587,
     :user_name => 'evrybiont@gmail.com',
-    :password => 'C7G7qn85ZEK7TNwo3V06jg',
+    :password => 'W10JcJEmpKaJq3VqvUmhcg',
     :domain => 'yourdomain.com',
     :authentication => :plain,
     :enable_starttls_auto => true
