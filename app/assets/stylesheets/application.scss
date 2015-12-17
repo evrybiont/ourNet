@@ -1,4 +1,5 @@
 @import 'skeleton';
+@import 'colors';
 @import 'navbar';
 @import 'yield';
 @import 'main';
@@ -6,6 +7,12 @@
 @import 'play_list';
 @import 'knack';
 @import 'font-awesome';
+@import 'sidebar';
+
+a {
+  text-decoration: none;
+}
+
 
 #projector {
   height: 300px;
