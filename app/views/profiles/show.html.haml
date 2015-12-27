@@ -1,3 +1,9 @@
 .row
-  .two.columns
+  .four.columns
     = image_tag current_user.image
+  .eight.columns
+    .row
+      .two.columns
+        = label_tag 'user_type'
+      .two.columns
+        = select_tag 'user_type', hash_select(User::ROLES), include_blank: true

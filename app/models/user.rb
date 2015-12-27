@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  ROLES = {
+    1 => 'Visitor',
+    2 => 'Builder',
+    3 => 'Event Manager'
+  }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook]

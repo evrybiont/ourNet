@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     dashboards_path
   end
+
+  def u
+    current_user
+  end
+  helper_method :u
 end
