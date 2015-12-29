@@ -2,13 +2,9 @@ App.registerBehavior('Profile')
 
 class Behavior.Profile extends Behavior.Ashared
   constructor: ->
-    @init_user_type()
+    @onUserTypeSelect @submit
 
-  init_user_type: ->
+  onUserTypeSelect: (fnSubmit) ->
     $(document).on('change', '#user_type', (e) ->
-      alert 'change'
+      fnSubmit $(this)
     )
-
-$(document).on 'page:change', ->
-  return unless $('.profiles.show').length > 0
-  new App.Profile

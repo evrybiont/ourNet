@@ -12,7 +12,8 @@ handleMultipleSelect = (e) ->
 window.App ||= {}
 window.Behavior ||= {}
 
-#App.init = ->
+Elemental.addNamespace(App)
 
-#$(document).on "page:change", ->
-#App.init()
+$(document).ready ->
+  Elemental.load document
+  return

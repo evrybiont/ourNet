@@ -1,13 +1,11 @@
 class User < ActiveRecord::Base
-  ROLES = {
-    1 => 'Visitor',
-    2 => 'Builder',
-    3 => 'Event Manager'
-  }
+  TYPES = ['Visitor', 'Builder', 'Event Manager']
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook]
+
+  validates :user_type, presence: true, inclusion: {in: TYPES}
 
   class << self
     def from_omniauth(auth)

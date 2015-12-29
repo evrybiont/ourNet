@@ -1,4 +1,4 @@
-.row
+.row(data-behavior='Profile')
   .four.columns
     = image_tag current_user.image
   .eight.columns
@@ -6,4 +6,4 @@
       .two.columns
         = label_tag 'user_type'
       .two.columns
-        = select_tag 'user_type', hash_select(User::ROLES), include_blank: true
+        = select_tag 'user_type', options_for_select(User::TYPES, u.user_type), include_blank: _for(u.user_type), data: {action: profile_path, type: 'PUT'}
