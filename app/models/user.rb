@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :confirmable, :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook]
 
   validates :user_type, presence: true, inclusion: {in: TYPES}
+  validates :name, presence: true
 
   class << self
     def from_omniauth(auth)

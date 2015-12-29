@@ -1,9 +1,20 @@
-.row(data-behavior='Profile')
-  .four.columns
+#setting.row{data: {behavior: 'Profile', action: profile_path, type: 'PUT'}}
+  .two.columns
     = image_tag current_user.image
-  .eight.columns
+  .ten.columns
     .row
-      .two.columns
-        = label_tag 'user_type'
-      .two.columns
-        = select_tag 'user_type', options_for_select(User::TYPES, u.user_type), include_blank: _for(u.user_type), data: {action: profile_path, type: 'PUT'}
+      .three.columns
+        = label_tag 'name'
+      .seven.columns
+        = text_field_tag 'name', u.name, class: 'u-full-width', autocomplete: 'off'
+      .two.columns.button.button-primary#save_name Save
+    .row
+      .three.columns
+        = label_tag 'email'
+      .seven.columns
+        = email_field_tag 'email', u.email, class: 'u-full-width', disabled: true
+    .row
+      .three.columns
+        = label_tag 'type'
+      .nine.columns
+        = select_tag 'user_type', options_for_select(User::TYPES, u.user_type), include_blank: _for(u.user_type), id: 'type'

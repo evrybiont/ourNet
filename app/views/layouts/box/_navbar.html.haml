@@ -10,7 +10,7 @@
       - if current_user
         = link_to dashboards_path, title: 'Home' do
           = fa_icon 'home 2x', class: 'black-color'
-        = link_to profile_path(current_user), title: 'Profile' do
+        = link_to profile_path(current_user), title: 'Setting' do
           = fa_icon 'cog 2x', class: 'black-color'
         = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out' do
           = fa_icon 'sign-out 2x', class: 'black-color'

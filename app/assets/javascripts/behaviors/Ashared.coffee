@@ -4,10 +4,10 @@ class Behavior.Ashared
   onBeginError: (response) =>
     console.log response
 
-  submit: (el) ->
+  submit: (el, data=null) ->
     $.ajax(
-      url: el.data('action')
-      type: el.data('type')
+      url: data.action || el.data('action')
+      type: data.type || el.data('type')
       data: el.serialize()
       error: @onBeginError
     )

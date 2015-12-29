@@ -9,6 +9,6 @@ class ProfilesController < ApplicationController
   private
 
   def u_params
-    params.permit(:user_type)
+    params.permit(:user_type, :name)
   end
 end
