@@ -14,6 +14,7 @@ gem 'omniauth-facebook'
 gem 'sass-rails', '~> 5.0'
 gem 'knack-rails'
 gem 'font-awesome-rails'
+gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug'
