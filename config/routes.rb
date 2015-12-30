@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   root 'dashboards#index'
 
-  resources :profiles, only: [:show, :update]
+  resources :profiles, only: [:show, :update, :edit] do
+    member do
+      put 'main'
+    end
+  end
   resources :dashboards, only: :index
   resources :users, only: :index
   resources :music, only: :index

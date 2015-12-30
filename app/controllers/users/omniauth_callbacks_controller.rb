@@ -3,10 +3,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth request.env['omniauth.auth']
     if @user.persisted?
       if @user.info_full?
-        sign_in_and_redirect @user, event: :authentication
+        sign_in @user, event: :authentication
+        redirect_to root_path
       else
         sign_in @user, event: :authentication
-        redirect_to profile_path @user
+        redirect_to edit_profile_path @user
       end
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]

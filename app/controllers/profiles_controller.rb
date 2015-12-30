@@ -2,13 +2,31 @@ class ProfilesController < ApplicationController
   layout 'profile'
   before_action :authenticate_user!
 
+  def main
+    update_u main_param
+    redirect_to profile_path u
+  end
+
   def update
-    render json: u.update(u_params)
+    render json: update_u(param)
+  end
+
+  def edit
+    redirect_to profile_path(u) if u.info_full?
   end
 
   private
 
-  def u_params
-    params.permit(:user_type, :name)
+  def param
+    params.permit :name
+  end
+
+  def main_param
+    params[:user].merge!({info_full: true})
+    params.require(:user).permit(:user_type, :info_full)
+  end
+
+  def update_u data
+    u.update data
   end
 end
