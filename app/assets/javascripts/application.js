@@ -5,7 +5,6 @@
 //= require base
 //= require_tree ./helpers/
 //= require_tree ./behaviors/
-//
 
 $(document).ready(function() {
     var audioSection = $('section#audio');
@@ -16,7 +15,7 @@ $(document).ready(function() {
         });
 
         var url = $(this).attr('href');
-        $('<source>').attr('src', url).appendTo(audio);
+        $('<source>').attr({src: url, type: "audio/mp3"}).appendTo(audio);
         audioSection.html(audio);
         return false;
     });
