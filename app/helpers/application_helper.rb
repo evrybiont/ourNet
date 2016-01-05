@@ -1,4 +1,6 @@
 module ApplicationHelper
+  BUCKET = 'ucc-music'
+
   def active term
     if params[:controller] == term
       'active'
@@ -11,5 +13,9 @@ module ApplicationHelper
 
   def _for col
     col.try(:blank?)
+  end
+
+  def download_url_for(song_key)
+    AWS::S3::S3Object.url_for(song_key, BUCKET, :authenticated => false)
   end
 end

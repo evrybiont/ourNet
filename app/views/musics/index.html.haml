@@ -1,0 +1,14 @@
+Musics
+%h2 Listen to a MP3 with HTML5 Audio
+%section#audio
+
+%ul
+  - @songs.each do |song|
+    %li
+      %div= song.key
+      %div= link_to "HTML5 Audio", download_url_for(song.key), :class => "html5"
+
+%h2 Upload a new MP3
+= form_tag musics_path, method: 'post', multipart: true do
+  = file_field_tag 'mp3file'
+  = submit_tag 'Upload'

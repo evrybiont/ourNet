@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'knack-rails'
 gem 'font-awesome-rails'
 gem 'elementaljs-rails'
+gem 'aws-s3'
 
 group :development, :test do
   gem 'byebug'

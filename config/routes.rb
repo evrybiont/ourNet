@@ -11,10 +11,11 @@ Rails.application.routes.draw do
     member do
       put 'main'
     end
+    resources :artworks
   end
   resources :dashboards, only: :index
   resources :users, only: :index
-  resources :music, only: :index
+  resources :musics, only: [:index, :create, :destroy]
   resources :videos, only: :index
   resources :photos, only: :index
 
