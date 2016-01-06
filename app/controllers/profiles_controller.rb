@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   layout 'profile'
+
   before_action :authenticate_user!
+  before_action :check_permissions!, only: :show
 
   def main
     update_u main_param

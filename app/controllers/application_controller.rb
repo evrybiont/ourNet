@@ -4,11 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource_or_scope)
-    session["user_return_to"] || root_path
+    session['user_return_to'] || root_path
   end
 
   def after_sign_out_path_for(resource_or_scope)
     dashboards_path
+  end
+
+  def check_permissions!
+    redirect_to edit_profile_path(u) unless u.info_full?
   end
 
   def u
