@@ -1,6 +1,6 @@
 #play_list
   .record
-    border-bottom: 1px solid #D0D0D0
+    /*border-bottom: 1px solid #D0D0D0
     display: flex
     font-size: 12px
     height: 27px
@@ -9,13 +9,17 @@
     .play-song, .continue
       @extend .fa, .fa-play, .fa-2x
       cursor: pointer
+      margin-left: 10px
+      margin-right: 2px
 
     .pause
       @extend .fa, .fa-pause, .fa-2x
       cursor: pointer
+      margin-left: 10px
+      margin-right: 2px
 
     .track_name
-      line-height: 1.8
+      line-height: 2.1
 
     .overme
       overflow: hidden
@@ -24,7 +28,7 @@
       width: 100%
 
     &:first-child
-      border-top: 1px solid #D0D0D0
+      /*border-top: 1px solid #D0D0D0
 
-.reactive
+.running
   background: #F2F2F2 !important

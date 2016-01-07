@@ -24,9 +24,16 @@ PL = {
   },
 
   setActiveRecord: function(){
-    $current_record = $('#' + this.current_track_id).parent();
+    $btn = $('#' + this.current_track_id);
+    $currentRecord = $btn.parent();
+    $songName = $btn.next().children();
+
     $('.reactive').removeClass('reactive');
-    $current_record.addClass('reactive');
+    $currentRecord.addClass('reactive');
+
+    $('.running').removeClass('running');
+    $songName.addClass('running');
+
     $('#current_track').html(PL.get(this.current_track_id).name);
   },
 
@@ -87,7 +94,7 @@ PL = {
 
   drowPlayList: function(){
     $.each(PL.data, function(i,song){
-      $('#play_list').append("<div class='record row'><div id=" + i + " class='play-song two columns'></div><div class='track_name overme six columns'>" + song.name);
+      $('#play_list').append("<div class='record row'><div id=" + i + " class='play-song'></div><div class='track_name overme six columns'><span class='song-name'>" + song.name);
       $('#' + i).next().attr('title', song.name)
     })
   },
