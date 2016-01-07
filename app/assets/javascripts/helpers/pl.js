@@ -20,7 +20,7 @@ PL = {
   },
 
   setCurrentTrackID: function(id){
-    this.current_track_id = id;
+    PL.current_track_id = id;
   },
 
   setActiveRecord: function(){
@@ -31,7 +31,9 @@ PL = {
   },
 
   runTrack: function(){
-    audio_player.src = PL.getSongUrl(this.current_track_id);
+    var url = PL.getSongUrl(this.current_track_id);
+    audio_player.src = url;
+    audio_player.load();
     audio_player.play();
   },
 
