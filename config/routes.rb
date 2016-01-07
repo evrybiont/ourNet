@@ -8,14 +8,15 @@ Rails.application.routes.draw do
   root 'dashboards#index'
 
   resources :profiles, only: [:show, :update, :edit] do
-    member do
-      put 'main'
-    end
-    resources :artworks
+    put 'main', on: :member
   end
+
+  resources :musics, only: [:index, :create, :destroy] do
+    get 'list', on: :collection
+  end
+
   resources :dashboards, only: :index
   resources :users, only: :index
-  resources :musics, only: [:index, :create, :destroy]
   resources :videos, only: :index
   resources :photos, only: :index
 

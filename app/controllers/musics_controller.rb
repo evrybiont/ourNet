@@ -4,7 +4,15 @@ class MusicsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @songs = AWS::S3::Bucket.find(BUCKET).objects
+    songs = AWS::S3::Bucket.find(BUCKET).objects
+    data = songs.map do |song|
+      {
+        name: song.key,
+        url: AWS::S3::S3Object.url_for(song.key, BUCKET, authenticated: false)
+      }
+    end
+
+    render json: data
   end
 
   def create

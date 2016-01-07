@@ -6,13 +6,17 @@ PL = {
   current_track_id: null,
 
   set: function(data){
-    this.data = data;
-    this.size = data.length - 1;
-    this.init();
+    PL.data = data;
+    PL.size = data.length - 1;
+    PL.init();
   },
 
   get: function(id){
     return this.data[id];
+  },
+
+  getSongUrl: function(id){
+    return this.data[id].url;
   },
 
   setCurrentTrackID: function(id){
@@ -20,24 +24,21 @@ PL = {
   },
 
   setActiveRecord: function(){
-    $current_record = $("#" + this.current_track_id).parent();
-    $(".reactive").removeClass("reactive");
-    $current_record.addClass("reactive");
-    $("#current_track").html(PL.get(this.current_track_id).name);
+    $current_record = $('#' + this.current_track_id).parent();
+    $('.reactive').removeClass('reactive');
+    $current_record.addClass('reactive');
+    $('#current_track').html(PL.get(this.current_track_id).name);
   },
 
   runTrack: function(){
-    var track = PL.get(this.current_track_id),
-        url = URL.createObjectURL(track);
-
-    audio_player.src = url;
+    audio_player.src = PL.getSongUrl(this.current_track_id);
     audio_player.play();
   },
 
   isPlaying: function(){ return !audio_player.paused; },
 
   cleanCurrentTrack: function(){
-    $(".reactive .pause, .reactive .continue").replaceWith("<div id='" + PL.current_track_id + "'class='play'>");
+    $('.reactive .pause, .reactive .continue').replaceWith("<div id='" + PL.current_track_id + "'class='play-song'>");
   },
 
   defineNextTrackID: function(){
@@ -46,25 +47,25 @@ PL = {
   },
 
   changePlayToPause: function(){
-    $(".reactive .play, .reactive .continue").replaceWith("<div id='" + PL.current_track_id + "'class='pause'>");
+    $('.reactive .play-song, .reactive .continue').replaceWith("<div id='" + PL.current_track_id + "'class='pause'>");
     PL.addTrackPauseListener();
   },
 
   changePauseToPlay: function(){
-    $(".reactive .pause").replaceWith("<div id='"+ PL.current_track_id +"'class='continue'>");
+    $('.reactive .pause').replaceWith("<div id='"+ PL.current_track_id +"'class='continue'>");
     PL.addTrackPlayListener();
   },
 
   addTrackPauseListener: function(){
-    $(".pause").click(function(){ audio_player.pause(); });
+    $('.pause').click(function(){audio_player.pause();});
   },
 
   addTrackPlayListener: function(){
-    $(".continue").click(function(){ audio_player.play(); });
+    $('.continue').click(function(){audio_player.play();});
   },
 
   updatePreviousRecord: function(){
-    $(".reactive .pause, .reactive .continue").replaceWith("<div id='"+ PL.current_track_id +"'class='play'>");
+    $('.reactive .pause, .reactive .continue').replaceWith("<div id='"+ PL.current_track_id +"'class='play-song'>");
     PL.addPlayListener();
   },
 
@@ -79,24 +80,24 @@ PL = {
   },
 
   clearPlayList: function(){
-    $("#play_list").empty();
+    $('#play_list').empty();
   },
 
   drowPlayList: function(){
-    $.each(PL.data, function(i,v){
-      $("#play_list").append("<div class='record'><div id=" + i + " class='play'></div><div class='track_name overme'>" + v.name);
-      $("#" + i).next().attr('title', v.name)
+    $.each(PL.data, function(i,song){
+      $('#play_list').append("<div class='record row'><div id=" + i + " class='play-song two columns'></div><div class='track_name overme six columns'>" + song.name);
+      $('#' + i).next().attr('title', song.name)
     })
   },
 
   addPlayerListeners: function(){
-    audio_player.addEventListener("pause", PL.changePauseToPlay);
-    audio_player.addEventListener("play", PL.changePlayToPause);
+    audio_player.addEventListener('pause', PL.changePauseToPlay);
+    audio_player.addEventListener('play', PL.changePlayToPause);
   },
 
   addPlayListener: function(){
-    $(".play").click(function(){
-      if ($(".reactive .pause, .reactive .continue").length) {PL.updatePreviousRecord();}
+    $('.play-song').click(function(){
+      if ($('.reactive .pause, .reactive .continue').length) {PL.updatePreviousRecord();}
       PL.setCurrentTrackID(parseInt(this.id));
       PL.setActiveRecord();
       PL.runTrack();
@@ -104,7 +105,7 @@ PL = {
   },
 
   addEndedListener: function(){
-    audio_player.addEventListener("ended", function(){
+    audio_player.addEventListener('ended', function(){
       PL.updatePreviousRecord();
       PL.setCurrentTrackID(PL.defineNextTrackID());
       PL.setActiveRecord();

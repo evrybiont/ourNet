@@ -4,10 +4,13 @@ class Behavior.Ashared
   onBeginError: (response) =>
     console.log response
 
-  submit: (el, data=null) ->
+  submit: (data, fn=null) ->
     $.ajax(
-      url: data.action || el.data('action')
-      type: data.type || el.data('type')
-      data: el.serialize()
+      url: data.action
+      type: data.type
+      #data: el.serialize()
+      success: (resp) =>
+        if typeof fn == 'function'
+          fn resp
       error: @onBeginError
     )

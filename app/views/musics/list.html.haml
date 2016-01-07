@@ -1,0 +1,6 @@
+%span{data: {behavior: 'Music', action: musics_path, type: 'GET'}}
+= render 'player'
+%h2 Upload a new MP3
+= form_tag musics_path, method: 'post', multipart: true do
+  = file_field_tag 'mp3file'
+  = submit_tag 'Upload'
