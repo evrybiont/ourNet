@@ -1,0 +1,8 @@
+if(PL.isPlaying) {
+console.log('playing'); 
+}else{
+$('.container.stuff').html("#{j (render 'dashboard')}");
+}
+
+$('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
+window.history.pushState('', '', '/');

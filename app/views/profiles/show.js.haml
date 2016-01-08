@@ -1,0 +1,4 @@
+$('.container.stuff').html("#{j (render 'settings')}");
+$('#sidebar').replaceWith("#{j (render 'layouts/box/profile_sidebar')}");
+new Behavior.Profile()
+window.history.pushState('', '', "#{profile_path(u)}");

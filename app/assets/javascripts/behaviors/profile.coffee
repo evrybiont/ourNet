@@ -5,7 +5,8 @@ class Behavior.Profile extends Behavior.Ashared
     @onNameInput @submit
 
   onNameInput: (fnSubmit) ->
-    $(document).on('click', '#save_name', (e) ->
+    $('#save_name').unbind('click')
+    $('#save_name').bind('click', (e) ->
       data = {
         action: $('#setting').data('action'),
         type: $('#setting').data('type'),

@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def index
-    @members = User.all
+    respond_formats
   end
 end

@@ -3,14 +3,14 @@
     %span.main-title Ukraine Custom Culture (BETA VERSION)
   .row
     .four.columns.nav-logo-gn
-      = link_to root_path, class: 'navbar-brand' do
+      = link_to root_path, remote: true, class: 'navbar-brand' do
         = image_tag 'logo.jpg', class: 'nav-logo'
 
     .eight.columns.nav-menu.nav-auto-align
       - if current_user
-        = link_to dashboards_path, title: 'Home' do
+        = link_to root_path, remote: true, title: 'Home' do
           = fa_icon 'home 2x', class: 'black-color'
-        = link_to profile_path(current_user), title: 'Setting' do
+        = link_to profile_path(current_user), remote: true, title: 'Setting' do
           = fa_icon 'cog 2x', class: 'black-color'
         = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out' do
           = fa_icon 'sign-out 2x', class: 'black-color'

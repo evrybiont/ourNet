@@ -15,6 +15,13 @@ class ApplicationController < ActionController::Base
     redirect_to edit_profile_path(u) unless u.info_full?
   end
 
+  def respond_formats
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   def u
     current_user
   end

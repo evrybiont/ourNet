@@ -5,6 +5,10 @@ PL = {
 
   current_track_id: null,
 
+  isPlaying: false,
+
+  /*isPlaying: function(){ return !audio_player.paused; },*/
+
   set: function(data){
     PL.data = data;
     PL.size = data.length - 1;
@@ -43,8 +47,6 @@ PL = {
     audio_player.load();
     audio_player.play();
   },
-
-  isPlaying: function(){ return !audio_player.paused; },
 
   cleanCurrentTrack: function(){
     $('.reactive .pause, .reactive .continue').replaceWith("<div id='" + PL.current_track_id + "'class='play-song'>");

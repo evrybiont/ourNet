@@ -17,6 +17,10 @@ class ProfilesController < ApplicationController
     redirect_to profile_path(u) if u.info_full?
   end
 
+  def show
+    respond_formats
+  end
+
   private
 
   def param
