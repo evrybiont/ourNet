@@ -8,13 +8,6 @@
 
     .eight.columns.nav-menu.nav-auto-align
       - if current_user
-        .four.columns
-          = link_to dashboards_path, title: 'Home' do
-            = fa_icon 'backward', class: 'black-color'
-          = link_to profile_path(current_user), title: 'Setting' do
-            = fa_icon 'play', class: 'black-color'
-          = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out' do
-            = fa_icon 'forward', class: 'black-color'
         = link_to dashboards_path, title: 'Home' do
           = fa_icon 'home 2x', class: 'black-color'
         = link_to profile_path(current_user), title: 'Setting' do
