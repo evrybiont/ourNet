@@ -8,7 +8,7 @@ class Behavior.Ashared
     $.ajax(
       url: data.action
       type: data.type
-      #data: el.serialize()
+      data: data.data
       success: (resp) =>
         if typeof fn == 'function'
           fn resp
