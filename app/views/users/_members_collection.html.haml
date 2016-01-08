@@ -1,0 +1,9 @@
+- step = 0
+
+- while users[step]
+  .row.members
+    - 4.times do |i|
+      - if users[i + step].nil?
+        - break
+      = render partial: 'member', locals: {user: users[i + step]}
+    - step += 4
