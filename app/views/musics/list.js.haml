@@ -1,3 +1,4 @@
 $('#media').html("#{j (render 'player')}");
-$('.stuff').html('<div class="row" id="play_list">')
+$('.stuff').html('<div class="row" id="play_list">');
+$('.stuff').append("#{j (render 'upload')}");
 new Behavior.Music("#{musics_path}")

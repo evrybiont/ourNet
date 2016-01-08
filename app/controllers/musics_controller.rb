@@ -17,7 +17,7 @@ class MusicsController < ApplicationController
 
   def create
     AWS::S3::S3Object.store(sanitize_filename(params[:mp3file].original_filename), params[:mp3file].read, BUCKET, access: :public_read)
-    redirect_to musics_path
+    redirect_to root_path
   end
 
   private
