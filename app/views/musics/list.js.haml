@@ -1,4 +1,3 @@
-$('#media').html("#{j (render 'player')}");
-$('.stuff').html('<div class="row" id="play_list">');
-$('.stuff').append("#{j (render 'upload')}");
-new Behavior.Music("#{musics_path}")
+$('.stuff').html("#{j (render 'musics/shared/list_content')}")
+new Behavior.Music()
+window.history.pushState('', '', "#{list_musics_path}");

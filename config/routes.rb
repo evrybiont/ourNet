@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :musics, only: [:index, :create, :destroy] do
+    get 'dashboard', on: :collection
     get 'list', on: :collection
   end
 

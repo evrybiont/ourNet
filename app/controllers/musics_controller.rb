@@ -3,6 +3,14 @@ class MusicsController < ApplicationController
 
   before_action :authenticate_user!
 
+  def dashboards
+    respond_formats
+  end
+
+  def list
+    respond_formats
+  end
+
   def index
     songs = AWS::S3::Bucket.find(BUCKET).objects
     data = songs.map do |song|
