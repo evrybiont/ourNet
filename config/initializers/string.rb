@@ -1,9 +1,5 @@
 class String
-  def get_album
-    split('/').try(:first)
-  end
-
   def get_name
-    split('/').try(:last)
+    split('/').last.gsub('.mp3','').strip
   end
 end
