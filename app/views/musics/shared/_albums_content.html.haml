@@ -1,1 +1,9 @@
-Albums
+- step = 0
+
+- while @albums[step]
+  .row.albums
+    - 4.times do |i|
+      - if @albums[i + step].nil?
+        - break
+      = render partial: 'musics/shared/album', locals: {album: @albums[i + step]}
+    - step += 4

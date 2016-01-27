@@ -10,6 +10,7 @@ class MusicsController < ApplicationController
   end
 
   def albums
+    @albums = Album.all
     respond_formats
   end
 
