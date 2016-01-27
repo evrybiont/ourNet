@@ -16,6 +16,7 @@ gem 'knack-rails'
 gem 'font-awesome-rails'
 gem 'elementaljs-rails'
 gem 'aws-s3'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'byebug'

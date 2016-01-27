@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     put 'main', on: :member
   end
 
-  resources :musics, only: [:index, :create, :destroy] do
+  resources :musics, only: [:index, :create, :show] do
     get 'dashboard', on: :collection
     get 'list', on: :collection
     get 'albums', on: :collection
