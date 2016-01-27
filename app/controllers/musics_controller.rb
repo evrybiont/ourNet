@@ -1,7 +1,4 @@
 class MusicsController < ApplicationController
-  BUCKET = 'ucc-music'
-  ALBUMS_BUCKET = 'ucc-music-albums'
-
   before_action :authenticate_user!
 
   def dashboards
@@ -17,8 +14,7 @@ class MusicsController < ApplicationController
   end
 
   def index
-    data = AWS::S3::Bucket.find(ALBUMS_BUCKET, prefix: params[:dir])
-    render json: prepare_songs(data)
+    render json: Song.all
   end
 
   def create
@@ -31,17 +27,5 @@ class MusicsController < ApplicationController
   def sanitize_filename file_name
     just_filename = File.basename(file_name)
     just_filename.sub(/[^\w\.\-]/,'_')
-  end
-
-  def prepare_songs data
-    data.map do |song|
-      if song.key.include?('mp3')
-        {
-          album: song.key.get_album,
-          name: song.key.get_name,
-          url: AWS::S3::S3Object.url_for(song.key, ALBUMS_BUCKET, authenticated: false)
-        }
-      end
-    end.compact
   end
 end
