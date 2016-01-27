@@ -15,11 +15,17 @@ class MusicsController < ApplicationController
   end
 
   def index
-    render json: Song.all
+    songs = if params[:dir]
+      album = Album.friendly.find(params[:dir])
+      album.songs
+    else
+      Song.all
+    end
+
+    render json: songs
   end
 
   def show
-    Album.friendly.find(params[:id])
     respond_formats
   end
 
