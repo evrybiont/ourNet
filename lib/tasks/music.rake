@@ -2,16 +2,17 @@ namespace :music do
   task populate: :environment do
     puts 'Populatig music...'
 
-    bucket = 'ucc-music-albums'
+    bucket = 'ucc-music'
     data = AWS::S3::Bucket.find(bucket)
 
     album = nil
     data.each do |song|
       if song.key.include?('mp3')
+        uid = song.key.get_uid
         name = song.key.get_name
         url = AWS::S3::S3Object.url_for(song.key, bucket, authenticated: false)
 
-        audio = Song.find_or_initialize_by(name: name, url: url)
+        audio = Song.find_or_initialize_by(name: name, url: url, uid: uid)
         album.songs.create(audio.as_json) if audio.new_record?
       else
         album = Album.find_or_create_by(name: song.key.gsub('/', ''))

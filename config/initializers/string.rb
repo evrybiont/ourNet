@@ -1,5 +1,9 @@
 class String
   def get_name
-    split('/').last.gsub('.mp3','').strip
+    split('/').last.split('__').last.gsub('.mp3','').strip
+  end
+
+  def get_uid
+    split('/').last.split('__').first
   end
 end

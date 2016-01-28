@@ -17,7 +17,7 @@ class MusicsController < ApplicationController
   def index
     songs = if params[:dir]
       album = Album.friendly.find(params[:dir])
-      album.songs
+      album.songs.order(:uid)
     else
       Song.all
     end
