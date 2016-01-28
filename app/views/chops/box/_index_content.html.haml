@@ -10,5 +10,5 @@
       = link_to '#', remote: true, method: 'PUT', title: 'Edit chop' do
         = fa_icon 'edit 2x', class: 'black-color'
     .one.column.gn-r
-      = link_to '#', remote: true, method: 'DELETE', title: 'Remove chop' do
+      = link_to chop_path(chop), remote: true, method: 'DELETE', title: 'Remove chop', data: {confirm: 'Are you sure?'} do
         = fa_icon 'remove 2x', class: 'black-color'

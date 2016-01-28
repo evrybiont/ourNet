@@ -3,7 +3,7 @@ class ChopsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @chops = current_user.chops
+    load_chops
     respond_formats
   end
 
@@ -20,7 +20,22 @@ class ChopsController < ApplicationController
     respond_formats
   end
 
+  def destroy
+    chop = Chop.find(params[:id])
+    if chop.try(:destroy)
+      flash.now[:success] = 'Chop has successfully removed'
+    end
+    load_chops
+    respond_formats
+  end
+
+  private
+
   def chop_params
     params.require(:chop).permit(:name, :description)
+  end
+
+  def load_chops
+    @chops = current_user.chops
   end
 end
