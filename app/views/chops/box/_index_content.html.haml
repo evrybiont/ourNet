@@ -5,7 +5,7 @@
 - @chops.each do |chop|
   .row
     .ten.columns
-      = link_to chop.name, '#'
+      = link_to chop.name, chop_path(chop), remote: true
     .one.column.gn-r
       = link_to edit_chop_path(chop), remote: true, title: 'Edit chop' do
         = fa_icon 'edit 2x', class: 'black-color'

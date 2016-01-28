@@ -20,6 +20,11 @@ class ChopsController < ApplicationController
     respond_formats
   end
 
+  def show
+    load_chop
+    respond_formats
+  end
+
   def edit
     load_chop
     respond_formats
