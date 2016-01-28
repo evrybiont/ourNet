@@ -1,7 +1,7 @@
 .container#sidebar
   %hr
   .row.nav-auto-align
-    -#= link_to '#', title: 'ArtWork' do
+    = link_to choppeds_path, title: 'Add Project', remote: true do
       = fa_icon 'gavel 2x', class: 'black-color'
     -#= link_to '#', title: 'Parts' do
       = fa_icon 'gears 2x', class: 'black-color'
@@ -11,5 +11,5 @@
       = fa_icon 'eye 2x', class: 'black-color'
     -#= link_to '#', title: 'Events' do
       = fa_icon 'beer 2x', class: 'black-color'
-    = link_to dashboard_musics_path, remote: true, title: 'Musics' do
+    -#= link_to dashboard_musics_path, remote: true, title: 'Musics' do
       = fa_icon 'music 2x', class: 'black-color'

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :users, only: :index
   resources :videos, only: :index
   resources :photos, only: :index
+  resources :choppeds
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
