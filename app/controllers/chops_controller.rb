@@ -1,9 +1,9 @@
-class ChoppedsController < ApplicationController
+class ChopsController < ApplicationController
   layout 'profile'
   before_action :authenticate_user!
 
   def index
-    @choppeds = current_user.chops
+    @chops = current_user.chops
     respond_formats
   end
 

@@ -1,0 +1,2 @@
+$('.stuff').html("#{j (render partial: 'chops/box/form', locals: {url: chops_path, method: 'POST'})}")
+window.history.pushState('', '', "#{new_chop_path}");

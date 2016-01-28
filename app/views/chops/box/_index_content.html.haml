@@ -1,0 +1,14 @@
+.row.gn-r
+  = link_to new_chop_path, remote: true, title: 'Add chop' do
+    = fa_icon 'plus-circle 2x', class: 'black-color'
+
+- @chops.each do |chop|
+  .row
+    .ten.columns
+      = link_to chop.name, '#'
+    .one.column.gn-r
+      = link_to '#', remote: true, method: 'PUT', title: 'Edit chop' do
+        = fa_icon 'edit 2x', class: 'black-color'
+    .one.column.gn-r
+      = link_to '#', remote: true, method: 'DELETE', title: 'Remove chop' do
+        = fa_icon 'remove 2x', class: 'black-color'

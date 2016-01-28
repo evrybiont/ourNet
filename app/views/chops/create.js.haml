@@ -1,0 +1,4 @@
+$('.stuff').html("#{j (render 'chops/box/show_content')}")
+$('.flash').html("#{j (render 'layouts/box/flash')}")
+new Behavior.Flash()
+window.history.pushState('', '', "#{chop_path(@chop)}");
