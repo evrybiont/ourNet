@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook]
 
+  has_many :choppeds
+
   validates :user_type, presence: true, inclusion: {in: TYPES}, on: :update
   validates :name, presence: true
 

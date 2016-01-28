@@ -86,14 +86,6 @@ $global-radius: 4px !default;
   box-sizing: border-box;
 }
 
-.nav-auto-align, .nav-logo-gn {
-  text-align: center;
-}
-
-.gn-c {
-  text-align: center;
-}
-
 // For devices larger than 400px
 @media (#{$bp-larger-than-mobile}) {
  .container {
