@@ -20,9 +20,21 @@ class ChopsController < ApplicationController
     respond_formats
   end
 
+  def edit
+    load_chop
+    respond_formats
+  end
+
+  def update
+    if load_chop.update chop_params
+      flash.now[:success] = 'Chop has successfully updated'
+    end
+    load_chops
+    respond_formats
+  end
+
   def destroy
-    chop = Chop.find(params[:id])
-    if chop.try(:destroy)
+    if load_chop.try(:destroy)
       flash.now[:success] = 'Chop has successfully removed'
     end
     load_chops
@@ -37,5 +49,9 @@ class ChopsController < ApplicationController
 
   def load_chops
     @chops = current_user.chops
+  end
+
+  def load_chop
+    @chop = Chop.find params[:id]
   end
 end
