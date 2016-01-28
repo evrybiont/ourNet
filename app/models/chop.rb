@@ -1,4 +1,4 @@
-class Chopped < ActiveRecord::Base
+class Chop < ActiveRecord::Base
   belongs_to :user
   validates :name, presence: true, uniqueness: true
 end

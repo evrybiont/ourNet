@@ -1,0 +1,3 @@
+$('.stuff').html("#{j (render 'choppeds/box/show_content')}")
+$('.flash').html("#{j (render 'layouts/box/flash')}")
+window.history.pushState('', '', "#{chopped_path(@chop)}");
