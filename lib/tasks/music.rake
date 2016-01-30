@@ -1,5 +1,12 @@
 namespace :music do
   task populate: :environment do
+    require 'aws-s3'
+    AWS::S3::Base.establish_connection!(
+      access_key_id: ENV['S3_KEY'],
+      secret_access_key: ENV['S3_SECRET'],
+    )
+    AWS::S3::DEFAULT_HOST.replace(ENV['S3_ENDPOINT'])
+
     puts 'Populatig music...'
 
     bucket = 'ucc-music'

@@ -9,6 +9,7 @@ class ChopsController < ApplicationController
 
   def new
     @chop = Chop.new
+    @chop.images.build
     respond_formats
   end
 
@@ -49,7 +50,7 @@ class ChopsController < ApplicationController
   private
 
   def chop_params
-    params.require(:chop).permit(:name, :description)
+    params.require(:chop).permit(:name, :description, images_attributes: [:id, :title, :description, :data])
   end
 
   def load_chops

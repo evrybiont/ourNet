@@ -15,8 +15,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'knack-rails'
 gem 'font-awesome-rails'
 gem 'elementaljs-rails'
-gem 'aws-s3'
 gem 'friendly_id'
+gem 'paperclip'
+gem 'aws-s3'
+gem 'aws-sdk', '< 2.0'
+gem 'remotipart'
 
 group :development, :test do
   gem 'byebug'
