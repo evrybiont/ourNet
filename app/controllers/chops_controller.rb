@@ -57,6 +57,6 @@ class ChopsController < ApplicationController
   end
 
   def load_chop
-    @chop = Chop.find params[:id]
+    @chop = Chop.friendly.find params[:id]
   end
 end
