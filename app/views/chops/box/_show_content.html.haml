@@ -3,4 +3,5 @@
 .row
   = @chop.description
 .row
-  = image_tag @chop.images.last.data.url
+  - if @chop.images.present?
+    = image_tag @chop.images.last.data.url

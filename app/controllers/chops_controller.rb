@@ -17,6 +17,8 @@ class ChopsController < ApplicationController
     @chop = current_user.chops.build chop_params
     if @chop.save
       flash.now[:success] = 'Chop has successfully created'
+    else
+      flash.now[:error] = 'Apply some photos to chop!'
     end
     respond_formats
   end
@@ -50,7 +52,21 @@ class ChopsController < ApplicationController
   private
 
   def chop_params
-    params.require(:chop).permit(:name, :description, images_attributes: [:id, :title, :description, :data])
+    rebuild_params
+    params.require(:chop).permit(
+      :name,
+      :description,
+      images_attributes: [:id, :data, :title, :description, :_destroy]
+    )
+  end
+
+  def rebuild_params
+    result = {}
+    data = params[:chop][:images_attributes]['0'][:data] || []
+    data.each_with_index do |v,i|
+      result[i.to_s] = {title: '', data: v}
+    end
+    params[:chop][:images_attributes].merge!(result)
   end
 
   def load_chops

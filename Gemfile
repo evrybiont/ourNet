@@ -20,6 +20,7 @@ gem 'paperclip'
 gem 'aws-s3'
 gem 'aws-sdk', '< 2.0'
 gem 'remotipart'
+gem 'nested_form'
 
 group :development, :test do
   gem 'byebug'
