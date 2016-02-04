@@ -1,4 +1,7 @@
-$('.stuff').html("#{j (render 'chops/box/show_content')}")
-$('.flash').html("#{j (render 'layouts/box/flash')}")
+$('.flash').html("#{j (render 'layouts/box/flash')}");
+- if flash[:error]
+  $('.stuff').html("#{j (render partial: 'chops/box/form', locals: {url: chops_path, method: 'POST'})}");
+- else
+  $('.stuff').html("#{j (render 'chops/box/show_content')}");
+  window.history.pushState('', '', "#{chop_path(@chop)}");
 new Behavior.Flash()
-window.history.pushState('', '', "#{chop_path(@chop)}");
