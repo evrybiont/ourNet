@@ -1,12 +1,20 @@
 .row
-  = form_for @chop, url: url, method: method, remote: true, html: {multipart: true} do |f|
+  = nested_form_for @chop, url: url, method: method, remote: true, html: {multipart: true} do |f|
     .row
       = f.text_field :name, placeholder: 'Enter name', autocomplete: 'off', required: true
     .row
       = f.text_field :description, placeholder: 'Enter description', autocomplete: 'off'
-    .row
-      = f.fields_for :images do |builder|
-        = builder.hidden_field :title
-        = builder.file_field :data, multiple: true
+    - if method == 'POST'
+      .row
+        = f.fields_for :images do |builder|
+          = builder.hidden_field :title
+          = builder.file_field :data, multiple: true
+    - else
+      .row
+        = f.fields_for :images do |builder|
+          = image_tag builder.object.data.url(:thumb)
+          = builder.link_to_remove 'Remove this photo'
+      .row
+        = f.file_field :new_images, multiple: true
     .row
       = f.submit 'Save', class: 'button-primary'

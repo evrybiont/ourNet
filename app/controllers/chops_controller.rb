@@ -56,17 +56,32 @@ class ChopsController < ApplicationController
     params.require(:chop).permit(
       :name,
       :description,
+      :new_images,
       images_attributes: [:id, :data, :title, :description, :_destroy]
     )
   end
 
   def rebuild_params
     result = {}
-    data = params[:chop][:images_attributes]['0'][:data] || []
+    data = get_images || []
     data.each_with_index do |v,i|
+      i += images_size if params[:chop][:new_images]
       result[i.to_s] = {title: '', data: v}
     end
+    params[:chop].merge!(images_attributes: {}) unless params[:chop][:images_attributes]
     params[:chop][:images_attributes].merge!(result)
+  end
+
+  def get_images
+    if params[:chop][:new_images]
+      params[:chop][:new_images]
+    elsif params[:chop][:images_attributes]
+      params[:chop][:images_attributes]['0'][:data]
+    end
+  end
+
+  def images_size
+    params[:chop][:images_attributes].try(:size) || 0
   end
 
   def load_chops
