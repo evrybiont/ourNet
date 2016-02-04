@@ -3,5 +3,5 @@
 .row
   = @chop.description
 .row
-  - if @chop.images.present?
-    = image_tag @chop.images.last.data.url
+  - @chop.images.each do |image|
+    = image_tag image.data.url(:thumb)
