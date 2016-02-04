@@ -57,6 +57,7 @@ class ChopsController < ApplicationController
       :name,
       :description,
       :new_images,
+      :slug,
       images_attributes: [:id, :data, :title, :description, :_destroy]
     )
   end
@@ -70,6 +71,7 @@ class ChopsController < ApplicationController
     end
     params[:chop].merge!(images_attributes: {}) unless params[:chop][:images_attributes]
     params[:chop][:images_attributes].merge!(result)
+    params[:chop].merge!(slug: params[:chop][:name].gsub(' ', '-'))
   end
 
   def get_images
