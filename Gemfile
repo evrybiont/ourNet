@@ -16,11 +16,11 @@ gem 'knack-rails'
 gem 'font-awesome-rails'
 gem 'elementaljs-rails'
 gem 'friendly_id'
-gem 'paperclip'
-gem 'aws-s3'
-gem 'aws-sdk', '< 2.0'
+gem 'paperclip', git: 'https://github.com/thoughtbot/paperclip', ref: '523bd46c768226893f23889079a7aa9c73b57d68'
+gem 'aws-sdk', '~> 2'
 gem 'remotipart'
 gem 'nested_form'
+gem 'aws-s3', require: false
 
 group :development, :test do
   gem 'byebug'
