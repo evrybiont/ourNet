@@ -35,6 +35,7 @@ class ChopsController < ApplicationController
 
   def update
     if load_chop.update chop_params
+      check_visible
       flash.now[:success] = 'Chop has successfully updated'
     end
     load_chops
@@ -92,5 +93,9 @@ class ChopsController < ApplicationController
 
   def load_chop
     @chop = Chop.friendly.find params[:id]
+  end
+
+  def check_visible
+    @chop.update_attribute(:visible, false) if @chop.images.blank?
   end
 end

@@ -4,8 +4,11 @@
 
 - @chops.each do |chop|
   .row
-    .ten.columns
+    .nine.columns
       = link_to chop.name, chop_path(chop), remote: true
+    .one.column.gn-r
+      = link_to 'javascript:void(0)', title: chop.state_title do
+        = fa_icon "#{chop.state_icon} 2x", class: 'black-color'
     .one.column.gn-r
       = link_to edit_chop_path(chop), remote: true, title: 'Edit chop' do
         = fa_icon 'edit 2x', class: 'black-color'

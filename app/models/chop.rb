@@ -8,4 +8,12 @@ class Chop < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  def state_title
+    visible? ? 'Visible' : 'Add some photos'
+  end
+
+  def state_icon
+    visible? ? 'circle green' : 'warning'
+  end
 end
