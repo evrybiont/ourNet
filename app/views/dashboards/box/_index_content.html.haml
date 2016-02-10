@@ -1,0 +1,8 @@
+- @chops.each do |chop|
+  .row.chop
+    .four.columns
+      = image_tag chop.image
+    .four.columns
+      = chop.name
+    .four.columns
+      = link_to 'Show more', '#', class: 'button button-primary u-pull-right'
