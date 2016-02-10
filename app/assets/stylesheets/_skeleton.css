@@ -414,6 +414,7 @@ there.
   .navbar .logo,
   .navbar .nav-menu {text-align: center;}
 
+  #sidebar .menu,
   .stuff .chop .avatar,
   .stuff .chop .name,
   .stuff .chop .actions {text-align: center;}
@@ -434,6 +435,7 @@ there.
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
   /*Dashboard log out user*/
+  #sidebar .menu,
   .navbar .nav-menu {text-align: right;}
 
   .stuff .row.chop .four.columns,
