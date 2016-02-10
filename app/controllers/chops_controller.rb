@@ -88,7 +88,7 @@ class ChopsController < ApplicationController
   end
 
   def load_chops
-    @chops = current_user.chops
+    @chops = current_user.chops.order(created_at: :asc)
   end
 
   def load_chop

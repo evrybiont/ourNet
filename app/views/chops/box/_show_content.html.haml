@@ -1,7 +1,8 @@
 .row
-  = @chop.name
+  %p= @chop.name
 .row
-  = @chop.description
+  %p= @chop.description
 .row
-  - @chop.images.each do |image|
-    = image_tag image.data.url(:thumb)
+  %p
+    - @chop.images.each do |image|
+      = image_tag image.data.url(:thumb)
