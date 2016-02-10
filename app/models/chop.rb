@@ -17,7 +17,7 @@ class Chop < ActiveRecord::Base
   end
 
   def state_icon
-    visible? ? 'circle green' : 'warning'
+    visible? ? 'check green' : 'warning'
   end
 
   def image

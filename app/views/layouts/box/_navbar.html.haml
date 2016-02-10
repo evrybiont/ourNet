@@ -1,12 +1,12 @@
 .container.navbar
-  .row.gn-c
+  .row.title
     %span.main-title Broken Rules (BETA VERSION)
   .row
-    .four.columns.nav-logo-gn
+    .four.columns.logo
       = link_to root_path, remote: true, class: 'navbar-brand' do
         = image_tag 'logo.jpg', class: 'nav-logo'
 
-    .eight.columns.nav-menu.gn-r
+    .eight.columns.nav-menu
       - if current_user
         = link_to root_path, remote: true, title: 'Home' do
           = fa_icon 'home 2x', class: 'black-color'

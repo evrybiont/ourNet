@@ -401,18 +401,71 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
+@media (min-width: 280px) {
+  /*Dashboard log out user*/
+  body {
+    background-image: image-url('main-hot-rod.png');
+    background-attachment: fixed;
+    background-position: 35% 130%;
+    background-repeat: no-repeat;
+  }
+
+  .navbar .title,
+  .navbar .logo,
+  .navbar .nav-menu {text-align: center;}
+
+  .stuff .chop .avatar,
+  .stuff .chop .name,
+  .stuff .chop .actions {text-align: center;}
+  .stuff .chop .image {width: 100%}
+  /*========================*/
+}
+
+@media (min-width: 350px) {
+  /*Dashboard log out user*/
+  .stuff .chop .image {width: auto}
+  /*========================*/
+}
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width: 400px) {
+}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+  /*Dashboard log out user*/
+  .navbar .nav-menu {text-align: right;}
+
+  .stuff .row.chop .four.columns,
+  .stuff .row.chop .seven.columns,
+  .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
+  /*========================*/
+}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (min-width: 750px) {
+  /*Dashboard log out user*/
+  .stuff .row.chop .four.columns {width: 30.6666666667%;}
+  .stuff .row.chop .seven.columns {margin-left: 4%; width: 56.6666666667%;}
+  .stuff .row.chop .one.column {margin-left: 4%; width: 4.66666666667%;}
+
+  .stuff .chop .image {width: 100%}
+  .stuff .chop .name {text-align: left;}
+  .stuff .chop .actions {text-align: right;}
+  /*========================*/
+}
 
 /* Larger than desktop */
-@media (min-width: 1000px) {}
+@media (min-width: 1000px) {
+  /*Dashboard log out user*/
+  body {
+    background-image: image-url('main-hot-rod.png');
+    background-attachment: fixed;
+    background-position: 110% 130%;
+    background-repeat: no-repeat;
+  }
+  /*========================*/
+}
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
