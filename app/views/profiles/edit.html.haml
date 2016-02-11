@@ -1,4 +1,4 @@
-.row
+#pre-setting.row
   .two.columns
     = image_tag current_user.image
   .ten.columns
@@ -6,7 +6,7 @@
       .row
         .four.columns
           = f.label 'user_type', 'Type can be set only once'
-        .three.columns
+        .five.columns
           = f.select 'user_type', options_for_select(User::TYPES)
-        .two.columns
+        .three.columns
           = f.submit 'Save', class: 'button-primary'
