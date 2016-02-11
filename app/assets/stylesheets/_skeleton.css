@@ -410,6 +410,8 @@ there.
     background-repeat: no-repeat;
   }
 
+  .stuff .u-chops .u-chop {margin-bottom: 35px}
+
   #setting .image {cursor: default;}
 
   #sidebar .menu,
@@ -417,13 +419,15 @@ there.
   .navbar .title,
   .navbar .logo,
   .navbar .nav-menu,
+  .stuff .u-chops,
   .stuff .chop .avatar,
   .stuff .chop .name,
   .stuff #setting .save,
   .stuff .chop .actions {text-align: center;}
 
-  /*.stuff #setting #save_name {width: auto}*/
   .stuff .chop .image {width: 100%}
+
+  .stuff .u-chops .u-chop .one.column {width: 33.3333333333%;}
   /*========================*/
 }
 
@@ -439,7 +443,10 @@ there.
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
+  .stuff .u-chops .u-chop {margin-bottom: 0}
+
   /*Dashboard log out user*/
+  .stuff .u-chops .add-chop,
   #sidebar .menu,
   .navbar .nav-menu {text-align: right;}
 
@@ -449,9 +456,11 @@ there.
   .stuff .row.chop .seven.columns,
   .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
 
+  .stuff .u-chops .u-chop .nine.columns,
   .stuff #setting .image {text-align: left;}
   .stuff #setting .ten.columns .save {text-align: center;}
   .stuff #setting .two.columns.save {margin-left: 4%; text-align: right; width: 13.3333333333%;}
+  .stuff .u-chops .u-chop .one.column {margin-left: 4%; text-align: right; width: 4.66666666667%;}
   /*========================*/
 }
 
