@@ -1,6 +1,6 @@
 .container#sidebar
   %hr
-  - if u
+  - if u.try(:info_full?)
     .row.menu
       -#= link_to '#', title: 'ArtWork' do
         = fa_icon 'gavel 2x', class: 'black-color'

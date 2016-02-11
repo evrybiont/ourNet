@@ -12,7 +12,12 @@ class ApplicationController < ActionController::Base
   end
 
   def check_permissions!
-    redirect_to edit_profile_path(u) unless u.info_full?
+    unless u.info_full?
+      respond_to do |format|
+        format.js {render js: "window.location.href='" + edit_profile_path(u) + "'"}
+        format.html {redirect_to edit_profile_path(u)}
+      end
+    end
   end
 
   def respond_formats

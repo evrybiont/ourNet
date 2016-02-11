@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   layout 'profile'
 
   before_action :authenticate_user!
-  before_action :check_permissions!, only: :show
+  before_action :check_permissions!, except: [:edit, :main]
 
   def main
     update_u main_param

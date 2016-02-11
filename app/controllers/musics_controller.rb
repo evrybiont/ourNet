@@ -1,5 +1,6 @@
 class MusicsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_permissions!
 
   def dashboards
     respond_formats

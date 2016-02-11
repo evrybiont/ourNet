@@ -1,6 +1,7 @@
 class ChopsController < ApplicationController
   layout 'profile'
   before_action :authenticate_user!
+  before_action :check_permissions!
 
   def index
     load_chops

@@ -1,12 +1,1 @@
-#pre-setting.row
-  .two.columns
-    = image_tag current_user.image
-  .ten.columns
-    = form_for u, url: main_profile_path, method: 'PUT' do |f|
-      .row
-        .four.columns
-          = f.label 'user_type', 'Type can be set only once'
-        .five.columns
-          = f.select 'user_type', options_for_select(User::TYPES)
-        .three.columns
-          = f.submit 'Save', class: 'button-primary'
+= render 'edit_container'
