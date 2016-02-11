@@ -1,4 +1,4 @@
-$('.flash').html("#{j (render 'layouts/box/flash')}");
+$('#flash').replaceWith("#{j (render 'layouts/box/flash')}");
 - if flash[:error]
   $('.stuff').html("#{j (render partial: 'chops/box/form', locals: {url: chops_path, method: 'POST'})}");
 - else

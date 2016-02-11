@@ -1,4 +1,4 @@
 $('.stuff').html("#{j (render 'chops/box/index_content')}")
-$('.flash').html("#{j (render 'layouts/box/flash')}")
+$('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
 new Behavior.Flash()
 window.history.pushState('', '', "#{chops_path}");

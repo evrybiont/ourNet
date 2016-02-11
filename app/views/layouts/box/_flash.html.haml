@@ -1,4 +1,4 @@
-.row.flash
+#flash.container
   - flash.each do |key, value|
-    .flash-message
-      .container.gn-c(class="alert alert-#{key}")= value
+    .row.flash-message
+      .gn-c(class="alert alert-#{key}")= value
