@@ -410,14 +410,19 @@ there.
     background-repeat: no-repeat;
   }
 
-  .navbar .title,
-  .navbar .logo,
-  .navbar .nav-menu {text-align: center;}
+  #setting .image {cursor: default;}
 
   #sidebar .menu,
+  #setting .image,
+  .navbar .title,
+  .navbar .logo,
+  .navbar .nav-menu,
   .stuff .chop .avatar,
   .stuff .chop .name,
+  .stuff #setting .save,
   .stuff .chop .actions {text-align: center;}
+
+  /*.stuff #setting #save_name {width: auto}*/
   .stuff .chop .image {width: 100%}
   /*========================*/
 }
@@ -438,9 +443,15 @@ there.
   #sidebar .menu,
   .navbar .nav-menu {text-align: right;}
 
+  .stuff #setting .two.columns,
+  .stuff #setting .ten.columns,
   .stuff .row.chop .four.columns,
   .stuff .row.chop .seven.columns,
   .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
+
+  .stuff #setting .image {text-align: left;}
+  .stuff #setting .ten.columns .save {text-align: center;}
+  .stuff #setting .two.columns.save {margin-left: 4%; text-align: right; width: 13.3333333333%;}
   /*========================*/
 }
 

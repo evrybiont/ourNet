@@ -1,5 +1,5 @@
 #setting.row{data: {behavior: 'Profile', action: profile_path, type: 'PUT'}}
-  .two.columns
+  .two.columns.image
     = image_tag current_user.image
   .ten.columns
     .row
@@ -7,7 +7,8 @@
         = label_tag 'name'
       .seven.columns
         = text_field_tag 'name', u.name, class: 'u-full-width', autocomplete: 'off'
-      .two.columns.button.button-primary#save_name Save
+      .two.columns.save
+        = fa_icon 'save 2x', class: 'black-color pointer', id: 'save_name'
     .row
       .three.columns
         = label_tag 'email'

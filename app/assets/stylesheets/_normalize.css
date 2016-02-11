@@ -299,6 +299,11 @@ input[type="submit"] {
  * Re-set default cursor for disabled elements.
  */
 
+input[type="text"]:disabled,
+input[type="email"]:disabled{
+  color: grey;
+}
+
 button[disabled],
 html input[disabled] {
   cursor: default;
