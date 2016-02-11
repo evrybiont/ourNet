@@ -8,7 +8,7 @@
       .seven.columns
         = text_field_tag 'name', u.name, class: 'u-full-width', autocomplete: 'off'
       .two.columns.save
-        = fa_icon 'save 2x', class: 'black-color pointer', id: 'save_name'
+        = fa_icon 'save 2x', class: 'black-color pointer', id: 'save_name', title: 'Update name'
     .row
       .three.columns
         = label_tag 'email'

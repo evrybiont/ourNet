@@ -1,0 +1,8 @@
+$('.flash').html("#{j (render 'layouts/box/flash')}")
+new Behavior.Flash()
+$('.container.stuff').html("#{j (render 'settings')}");
+$('#sidebar').replaceWith("#{j (render 'layouts/box/profile_sidebar')}");
+new Behavior.Profile()
+- if flash[:error]
+  $('.stuff #name').val("#{u.reload.name}");
+window.history.pushState('', '', "#{profile_path(u)}");

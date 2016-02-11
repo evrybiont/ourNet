@@ -10,7 +10,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    render json: update_u(param)
+    update_u(param)
+    respond_formats
   end
 
   def edit
@@ -33,6 +34,10 @@ class ProfilesController < ApplicationController
   end
 
   def update_u data
-    u.update data
+    if u.update data
+      flash.now[:success] = 'Name has successfully updated'
+    else
+      flash.now[:error] = 'You should enter your name'
+    end
   end
 end
