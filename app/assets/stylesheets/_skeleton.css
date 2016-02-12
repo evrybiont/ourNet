@@ -495,3 +495,12 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+@media (min-height: 850px) {
+  body {
+    background-image: image-url('main-hot-rod.png');
+    background-attachment: fixed;
+    background-position: 110% 108%;
+    background-repeat: no-repeat;
+  }
+}
