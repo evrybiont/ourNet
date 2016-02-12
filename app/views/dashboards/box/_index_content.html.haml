@@ -1,9 +1,10 @@
 - @chops.each do |chop|
   .row.chop
     .four.columns.avatar
-      = image_tag chop.image, class: 'image'
+      = link_to chop_path(chop), remote: true, title: chop.name do
+        = image_tag chop.image, class: 'image'
     .seven.columns.name
       = chop.name
     .one.column.actions
-      = link_to '#', remote: true, title: 'Show more' do
+      = link_to chop_path(chop), remote: true, title: 'Show more' do
         = fa_icon 'external-link-square 2x', class: 'black-color'
