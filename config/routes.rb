@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     get 'albums', on: :collection
   end
 
-  resources :dashboards, only: :index
+  resources :dashboards, only: [:index, :show]
   resources :users, only: :index
   resources :videos, only: :index
   resources :photos, only: :index

@@ -1,0 +1,9 @@
+.row.chop-container
+  .row
+    %p= @chop.name
+  .row
+    %p.desc= @chop.description
+  .row
+    %p
+      - @chop.images.each do |image|
+        = image_tag image.data.url(:thumb)

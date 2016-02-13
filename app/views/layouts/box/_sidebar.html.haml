@@ -2,6 +2,9 @@
   %hr
   - if u.try(:info_full?)
     .row.menu
+      - if go_back?
+        = link_to request.headers['HTTP_REFERER'], remote: true, title: 'Go Back to page', class: 'u-pull-left' do
+          = fa_icon 'reply 2x', class: 'black-color'
       -#= link_to '#', title: 'ArtWork' do
         = fa_icon 'gavel 2x', class: 'black-color'
       -#= link_to '#', title: 'Parts' do
@@ -20,3 +23,8 @@
         = fa_icon 'photo 2x', class: 'black-color'
       = link_to users_path, remote: true, title: 'Members' do
         = fa_icon 'users 2x', class: 'black-color'
+  - else
+    - if go_back?
+      .row.menu.none
+        = link_to request.headers['HTTP_REFERER'], remote: true, title: 'Go Back to page', class: 'u-pull-left' do
+          = fa_icon 'reply 2x', class: 'black-color'

@@ -2,6 +2,9 @@
   %hr
   - if u.try(:info_full?)
     .row.menu
+      - if go_back?
+        = link_to request.headers['HTTP_REFERER'], remote: true, title: 'Go Back to page', class: 'u-pull-left' do
+          = fa_icon 'reply 2x', class: 'black-color'
       = link_to chops_path, title: 'Chop list', remote: true do
         = fa_icon 'gavel 2x', class: 'black-color'
       -#= link_to '#', title: 'Parts' do
@@ -14,3 +17,8 @@
         = fa_icon 'beer 2x', class: 'black-color'
       -#= link_to dashboard_musics_path, remote: true, title: 'Musics' do
         = fa_icon 'music 2x', class: 'black-color'
+  - else
+    - if go_back?
+      .row.menu.none
+        = link_to request.headers['HTTP_REFERER'], remote: true, title: 'Go Back to page', class: 'u-pull-left' do
+          = fa_icon 'reply 2x', class: 'black-color'

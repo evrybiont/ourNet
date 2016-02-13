@@ -1,6 +1,5 @@
 $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
 $('.container.stuff').html("#{j (render 'settings')}");
-$('#sidebar').replaceWith("#{j (render 'layouts/box/profile_sidebar')}");
 new Behavior.Flash()
 new Behavior.Profile()
 - if flash[:error]

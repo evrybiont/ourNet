@@ -1,0 +1,3 @@
+$('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
+$('.container.stuff').html("#{j (render 'shared/chop_content')}");
+window.history.pushState('', '', "#{dashboard_path(@chop)}");

@@ -1,2 +1,3 @@
+$('#sidebar').replaceWith("#{j (render 'layouts/box/profile_sidebar')}");
 $('.stuff').html("#{j (render partial: 'chops/box/form', locals: {url: chop_path(@chop), method: 'PUT'})}")
 window.history.pushState('', '', "#{edit_chop_path(@chop)}");

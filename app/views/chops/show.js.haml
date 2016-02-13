@@ -1,2 +1,3 @@
+$('#sidebar').replaceWith("#{j (render 'layouts/box/profile_sidebar')}");
 $('.stuff').html("#{j (render 'chops/box/show_content')}")
 window.history.pushState('', '', "#{chop_path(@chop)}");
