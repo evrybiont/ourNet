@@ -26,6 +26,7 @@ class ChopsController < ApplicationController
 
   def show
     load_chop
+    @chop_images = @chop.images.map{|i| [i.data.url]}
     respond_formats
   end
 
