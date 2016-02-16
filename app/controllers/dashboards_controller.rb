@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
   end
 
   def show
-    load_chop
+    load_chop_info
     respond_formats
   end
 
@@ -15,7 +15,8 @@ class DashboardsController < ApplicationController
     @chops = Chop.active
   end
 
-  def load_chop
+  def load_chop_info
     @chop = Chop.friendly.find params[:id]
+    @chop_images = @chop.images.map{|i| [i.data.url]}
   end
 end

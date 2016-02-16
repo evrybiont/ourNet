@@ -1,9 +1,7 @@
 .row.chop-container
   .row
+    #projector{data: {behavior: 'ImageGallery', data: @chop_images}}
+  .row
     %p= @chop.name
   .row
     %p.desc= @chop.description
-  .row
-    %p
-      - @chop.images.each do |image|
-        = image_tag image.data.url(:thumb)

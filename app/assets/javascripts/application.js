@@ -3,6 +3,7 @@
 //= require jquery.remotipart
 //= require jquery_nested_form
 //= require elemental
+//= require knack-rails
 
 //= require base
 //= require_tree ./helpers/

@@ -1,3 +1,4 @@
 $('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
 $('.container.stuff').html("#{j (render 'shared/chop_content')}");
+new Behavior.ImageGallery()
 window.history.pushState('', '', "#{dashboard_path(@chop)}");
