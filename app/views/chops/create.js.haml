@@ -2,6 +2,7 @@ $('#flash').replaceWith("#{j (render 'layouts/box/flash')}");
 - if flash[:error]
   $('.stuff').html("#{j (render partial: 'chops/box/form', locals: {url: chops_path, method: 'POST'})}");
 - else
-  $('.stuff').html("#{j (render 'chops/box/show_content')}");
+  $('.stuff').html("#{j (render 'shared/chop_content')}");
+  new Behavior.ImageGallery()
   window.history.pushState('', '', "#{chop_path(@chop)}");
 new Behavior.Flash()

@@ -21,12 +21,13 @@ class ChopsController < ApplicationController
     else
       flash.now[:error] = 'Apply some photos to chop!'
     end
+    load_images
     respond_formats
   end
 
   def show
     load_chop
-    @chop_images = @chop.images.map{|i| [i.data.url]}
+    load_images
     respond_formats
   end
 
@@ -99,5 +100,9 @@ class ChopsController < ApplicationController
 
   def check_visible
     @chop.update_attribute(:visible, false) if @chop.images.blank?
+  end
+
+  def load_images
+    @chop_images = @chop.images.map{|i| [i.data.url]}
   end
 end
