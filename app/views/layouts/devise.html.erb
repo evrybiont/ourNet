@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UCC</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='<%= controller_name %> <%= action_name %>'>
+  <div id='media' class='container'><audio id='audio_player'></audio></div>
+  <%= render 'layouts/box/devise_navbar' %>
+  <%= render 'layouts/box/flash' %>
+  <div class='container stuff'>
+    <%= yield %>
+  </div>
+</body>
+</html>
