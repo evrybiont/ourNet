@@ -4,9 +4,17 @@
   .ten.columns
     = form_for u, url: main_profile_path, method: 'PUT' do |f|
       .row
-        .four.columns
-          = f.label 'user_type', 'Type can be set only once'
-        .five.columns
-          = f.select 'user_type', options_for_select(User::TYPES)
+        .two.columns
+          =f.label :male_true, 'Male', class: 'six columns'
+          =f.radio_button :male, true, class: 'six columns', checked: 'checked'
+        .two.columns
+          =f.label :male_false, 'Female', class: 'six columns'
+          =f.radio_button :male, false, class: 'six columns'
+      %br
+      .row
+        .two.columns
+          = f.label 'user_type', 'Type'
         .three.columns
-          = f.submit 'Save', class: 'button-primary'
+          = f.select 'user_type', options_for_select(User::TYPES)
+      .row
+        = f.submit 'Save'

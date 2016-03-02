@@ -222,8 +222,9 @@ input[type="button"].button-primary:focus {
   background-color: #1EAEDB;
   border-color: #1EAEDB; }
 
-
-.devise input[type="submit"]{
+.button,
+input[type="submit"],
+input[type="button"] {
   background-color: goldenrod;
 }
 
@@ -429,7 +430,7 @@ there.
   .stuff .chop .name,
   .stuff #setting .save,
   .stuff #setting .save,
-  .stuff #pre-setting,
+  /*.stuff #pre-setting,*/
   .stuff .chop .actions {text-align: center;}
 
   .stuff .chop .image {width: 100%}
@@ -453,7 +454,7 @@ there.
   .stuff .u-chops .u-chop {margin-bottom: 0}
 
   /*Dashboard log out user*/
-  .stuff #pre-setting .ten.columns,
+  /*.stuff #pre-setting .ten.columns,*/
   .stuff .u-chops .add-chop,
   #sidebar .menu,
   .navbar .nav-menu {text-align: right;}
@@ -464,7 +465,7 @@ there.
   .stuff .row.chop .seven.columns,
   .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
 
-  .stuff #pre-setting .two.columns,
+  /*.stuff #pre-setting .two.columns,*/
   .stuff .u-chops .u-chop .nine.columns,
   .stuff #setting .image {text-align: left;}
   .stuff #setting .ten.columns .save {text-align: center;}

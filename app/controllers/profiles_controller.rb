@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
 
   def main_param
     params[:user].merge!({info_full: true})
-    params.require(:user).permit(:user_type, :info_full)
+    params.require(:user).permit(:user_type, :info_full, :male)
   end
 
   def update_u data
