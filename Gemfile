@@ -21,6 +21,7 @@ gem 'aws-sdk', '~> 2'
 gem 'remotipart'
 gem 'nested_form'
 gem 'aws-s3', require: false
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'byebug'

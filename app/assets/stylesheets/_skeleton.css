@@ -223,6 +223,10 @@ input[type="button"].button-primary:focus {
   border-color: #1EAEDB; }
 
 
+.devise input[type="submit"]{
+  background-color: goldenrod;
+}
+
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 input[type="email"],
@@ -410,7 +414,8 @@ there.
     background-repeat: no-repeat;
   }
 
-  .stuff .u-chops .u-chop {margin-bottom: 35px}
+  .devise .three.columns {width: 230px;}
+  .stuff .u-chops .u-chop {margin-bottom: 35px;}
 
   #setting .image {cursor: default;}
 
