@@ -1,7 +1,10 @@
 class CustomFailure < Devise::FailureApp
   def redirect_url
-    dashboards_path
-    new_user_session_path if params[:commit] == 'Log in' && params[:controller] == 'sessions'
+    if params[:commit] == 'Log in' && params[:controller] == 'devise/sessions'
+      new_user_session_path
+    else
+      dashboards_path
+    end
   end
 
   def respond
