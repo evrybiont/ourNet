@@ -19,3 +19,7 @@
         = label_tag 'type'
       .seven.columns
         = text_field_tag 'user_type', u.user_type, id: 'type', disabled: true, class: 'u-full-width'
+        .row
+          = nested_form_for u, url: change_avatar_profile_path, method: 'put', remote: true, data: {behavior: 'Avatar'}, html: {class: 'hd'} do |f|
+            = f.file_field :avatar
+            = f.submit 'Save', id: 'change_avatar', class: 'button-primary'

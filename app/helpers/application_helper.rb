@@ -25,12 +25,12 @@ module ApplicationHelper
 
   def display_avatar
     if u.avatar.present?
-      image_tag current_user.avatar.url
+      image_tag current_user.avatar.url(:medium), class: 'done pointer', title: 'Change your avatar'
     else
       if u.male?
-        content_tag(:div, nil, class: 'male-avatar')
+        content_tag(:div, nil, class: 'male-avatar', title: 'Change your avatar')
       else
-        content_tag(:div, nil, class: 'female-avatar')
+        content_tag(:div, nil, class: 'female-avatar', title: 'Change your avatar')
       end
     end
   end

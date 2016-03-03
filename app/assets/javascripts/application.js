@@ -4,6 +4,8 @@
 //= require jquery_nested_form
 //= require elemental
 //= require knack-rails
+//= require jquery.jcrop
+//= require papercrop
 
 //= require base
 //= require_tree ./helpers/

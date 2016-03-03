@@ -22,6 +22,7 @@ gem 'remotipart'
 gem 'nested_form'
 gem 'aws-s3', require: false
 gem 'autoprefixer-rails'
+gem 'papercrop'
 
 group :development, :test do
   gem 'byebug'

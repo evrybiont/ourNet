@@ -3,6 +3,4 @@ $('.container.stuff').html("#{j (render 'settings')}");
 new Behavior.Flash()
 new Behavior.Profile()
 new Behavior.Avatar()
-- if flash[:error]
-  $('.stuff #name').val("#{u.reload.name}");
 window.history.pushState('', '', "#{profile_path(u)}");

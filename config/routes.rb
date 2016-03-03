@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:show, :update, :edit] do
     put 'main', on: :member
+    put 'change_avatar', on: :member
   end
 
   resources :musics, only: [:index, :create, :show] do

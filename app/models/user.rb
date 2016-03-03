@@ -5,7 +5,18 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook]
 
-  has_attached_file :avatar, styles: {medium: '300x300>', thumb: '100x100>'}
+  has_attached_file :avatar, styles: {medium: '230x230#', thumb: '100x100#'},
+                    storage: :s3,
+                    s3_credentials: {
+                      bucket: ENV['S3_AVATARS_BUCKET'],
+                      access_key_id: ENV['S3_KEY'],
+                      secret_access_key: ENV['S3_SECRET']
+                    },
+                    url: ':s3_domain_url',
+                    path: '/:class/:attachment/:id_partition/:style/:filename',
+                    s3_region: ENV['S3_REGION']
+
+  crop_attached_file :avatar
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   has_many :chops

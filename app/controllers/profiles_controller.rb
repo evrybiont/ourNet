@@ -22,6 +22,16 @@ class ProfilesController < ApplicationController
     respond_formats
   end
 
+  def change_avatar
+    if u.update params.require(:user).permit(:avatar)
+      flash.now[:success] = 'Avatar has been changed'
+    else
+      flash.now[:error] = 'oops! :('
+    end
+
+    respond_formats
+  end
+
   private
 
   def param
