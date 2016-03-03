@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook]
 
+  has_attached_file :avatar, styles: {medium: '300x300>', thumb: '100x100>'}
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
   has_many :chops
 
   validates :user_type, presence: true, inclusion: {in: TYPES}, on: :update

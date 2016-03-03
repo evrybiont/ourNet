@@ -1,20 +1,20 @@
 #setting.row{data: {behavior: 'Profile', action: profile_path, type: 'PUT'}}
-  .two.columns.image
-    = image_tag current_user.image
-  .ten.columns
-    .row
+  .three.columns.avatar
+    = display_avatar
+  .nine.columns.options
+    .row.option
       .three.columns
         = label_tag 'name'
       .seven.columns
         = text_field_tag 'name', u.name, class: 'u-full-width', autocomplete: 'off'
       .two.columns.save
         = fa_icon 'save 2x', class: 'black-color pointer', id: 'save_name', title: 'Update name'
-    .row
+    .row.option
       .three.columns
         = label_tag 'email'
       .seven.columns
         = email_field_tag 'email', u.email, class: 'u-full-width', disabled: true
-    .row
+    .row.option
       .three.columns
         = label_tag 'type'
       .seven.columns

@@ -421,7 +421,6 @@ there.
   #setting .image {cursor: default;}
 
   #sidebar .menu,
-  #setting .image,
   .navbar .title,
   .navbar .logo,
   .navbar .nav-menu,
@@ -459,18 +458,18 @@ there.
   #sidebar .menu,
   .navbar .nav-menu {text-align: right;}
 
-  .stuff #setting .two.columns,
-  .stuff #setting .ten.columns,
+  .stuff #setting .three.columns.avatar,
+  .stuff #setting .nine.columns,
   .stuff .row.chop .four.columns,
   .stuff .row.chop .seven.columns,
   .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
 
   /*.stuff #pre-setting .two.columns,*/
   .stuff .u-chops .u-chop .nine.columns,
-  .stuff #setting .image {text-align: left;}
-  .stuff #setting .ten.columns .save {text-align: center;}
-  .stuff #setting .two.columns.save {margin-left: 4%; text-align: right; width: 13.3333333333%;}
+  .stuff #setting .two.columns.save {text-align: end;}
   .stuff .u-chops .u-chop .one.column {margin-left: 4%; text-align: right; width: 4.66666666667%;}
+
+  #setting .three.columns.avatar {width: 230px; height: 230px;}
   /*========================*/
 }
 
@@ -496,6 +495,11 @@ there.
     background-position: 110% 130%;
     background-repeat: no-repeat;
   }
+
+  .stuff #setting .three.columns.avatar {width: 25%; text-align: left;}
+  .stuff #setting .nine.columns {width: 75%;}
+  .stuff #setting .options {position: relative; top: 81px;}
+  .stuff #setting .option label {float: right;}
   /*========================*/
 }
 

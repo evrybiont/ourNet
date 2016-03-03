@@ -23,6 +23,18 @@ module ApplicationHelper
     request.headers['HTTP_REFERER'].present? && not_same?
   end
 
+  def display_avatar
+    if u.avatar.present?
+      image_tag current_user.avatar.url
+    else
+      if u.male?
+        content_tag(:div, nil, class: 'male-avatar')
+      else
+        content_tag(:div, nil, class: 'female-avatar')
+      end
+    end
+  end
+
   private
 
   def not_same?
