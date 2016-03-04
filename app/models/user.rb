@@ -19,13 +19,14 @@ class User < ActiveRecord::Base
   crop_attached_file :avatar
   validates_attachment :avatar, presence: true,
                        content_type: {content_type: ['image/jpg', 'image/jpeg', 'image/png']},
-                       size: {in: 0..1.megabytes}
+                       size: {in: 0..2.megabytes}
 
 
   has_many :chops
 
   validates :user_type, presence: true, inclusion: {in: TYPES}, on: :update
   validates :name, presence: true
+  validates :avatar, dimensions: { width: 1050, height: 1050 }
 
   class << self
     def from_omniauth(auth)

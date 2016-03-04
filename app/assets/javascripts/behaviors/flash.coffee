@@ -1,7 +1,7 @@
 App.registerBehavior('Flash')
 
 class Behavior.Flash extends Behavior.Ashared
-  constructor: ->
+  constructor: (delay) ->
     setTimeout (->
       $('.flash-message').fadeOut '300'
-    ), 3000
+    ), delay || 3000

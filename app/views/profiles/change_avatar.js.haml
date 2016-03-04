@@ -6,7 +6,7 @@
   new Behavior.Avatar()
 - elsif flash[:error]
   $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
-  new Behavior.Flash()
+  new Behavior.Flash(6000)
   new Behavior.Profile()
   new Behavior.Avatar()
 - else
