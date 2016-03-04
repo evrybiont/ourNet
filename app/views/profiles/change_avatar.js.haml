@@ -1,6 +1,15 @@
-$('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
-$('.container.stuff').html("#{j (render 'settings')}");
-new Behavior.Flash()
-new Behavior.Profile()
-new Behavior.Avatar()
+- if params[:crop_avatar]
+  $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
+  $('.container.stuff').html("#{j (render 'settings')}");
+  new Behavior.Flash()
+  new Behavior.Profile()
+  new Behavior.Avatar()
+- elsif flash[:error]
+  $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
+  new Behavior.Flash()
+  new Behavior.Profile()
+  new Behavior.Avatar()
+- else
+  $('.container.stuff').html("#{j (render 'crop_avatar')}");
+  init_papercrop();
 window.history.pushState('', '', "#{profile_path(u)}");
