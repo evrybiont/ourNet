@@ -1,3 +1,3 @@
 $('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
-$('.container.stuff').html("#{j (render partial: 'members_collection', locals: {users: @users})}");
+$('.stuff').html("#{j (render partial: 'members_collection', locals: {users: @users})}");
 window.history.pushState('', '', '/users');
