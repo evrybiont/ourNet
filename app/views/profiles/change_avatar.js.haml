@@ -16,9 +16,9 @@
   $('.menu').hide();
   $('.stuff').html("#{j (render 'crop_avatar')}");
   init_papercrop();
-  new Behavior.Crop()
   setTimeout(function(){
   $('.spinner-wrap').hide()
   }, 3000);
+  new Behavior.Spinner()
 
 window.history.pushState('', '', "#{profile_path(u)}");

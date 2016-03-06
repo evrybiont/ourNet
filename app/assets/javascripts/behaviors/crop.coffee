@@ -1,7 +1,7 @@
-App.registerBehavior('Crop')
+App.registerBehavior('Spinner')
 
-class Behavior.Crop
+class Behavior.Spinner
   constructor: ->
-    $('#crop_btn').bind('click', ->
+    $('.run-spinner').bind('click', ->
       $('.spinner-wrap').show()
     )
