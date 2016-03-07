@@ -465,8 +465,11 @@ there.
   .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
 
   /*.stuff #pre-setting .two.columns,*/
+  .navbar .logo,
   .stuff .u-chops .u-chop .nine.columns {text-align: left;}
+
   .stuff #setting .two.columns.save {text-align: end;}
+
   .stuff .u-chops .u-chop .one.column {margin-left: 4%; text-align: right; width: 4.66666666667%;}
 
   #setting .three.columns.avatar {width: 230px; height: 230px;}
