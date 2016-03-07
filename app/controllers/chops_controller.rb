@@ -91,11 +91,11 @@ class ChopsController < ApplicationController
   end
 
   def load_chops
-    @chops = current_user.chops.order(created_at: :asc)
+    @chops = u.chops.order(created_at: :asc)
   end
 
   def load_chop
-    @chop = Chop.friendly.find params[:id]
+    @chop = u.chops.friendly.find params[:id]
   end
 
   def check_visible
