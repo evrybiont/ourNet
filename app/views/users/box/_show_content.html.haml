@@ -17,7 +17,7 @@
         = @user.email
       .joined
         = fa_icon 'clock-o', class: 'option'
-        Joined on 1 Apr 2016
+        = @user.created_at.strftime("Joined on %e %b %Y")
       %hr
       .activity.row.gn-c
         = link_to '#', remote: true, class: 'link' do
