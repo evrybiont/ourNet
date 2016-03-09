@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :dashboards, only: [:index, :show]
-  resources :users, only: :index
+  resources :users, only: [:index, :show]
   resources :videos, only: :index
   resources :photos, only: :index
   resources :chops

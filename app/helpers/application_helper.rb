@@ -23,14 +23,16 @@ module ApplicationHelper
     request.headers['HTTP_REFERER'].present? && not_same?
   end
 
-  def display_avatar
-    if u.avatar.present?
-      image_tag current_user.avatar.url(:medium), class: 'done pointer', title: 'Change your avatar'
+  def display_avatar user, can_change
+    title = can_change ? 'Change your avatar' : 'Avatar'
+    pointer = can_change ? 'pointer' : ''
+    if user.avatar.present?
+      image_tag user.avatar.url(:medium), class: "done #{pointer}", title: title
     else
       if u.male?
-        content_tag(:div, nil, class: 'male-avatar', title: 'Change your avatar')
+        content_tag(:div, nil, class: "male-avatar #{pointer}", title: title)
       else
-        content_tag(:div, nil, class: 'female-avatar', title: 'Change your avatar')
+        content_tag(:div, nil, class: "female-avatar #{pointer}", title: title)
       end
     end
   end
