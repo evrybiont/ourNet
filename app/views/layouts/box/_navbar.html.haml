@@ -17,7 +17,5 @@
         = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out' do
           = fa_icon 'sign-out 2x', class: 'black-color'
       - else
-        = link_to new_user_session_path, title: 'Custom Sign In' do
+        = link_to new_user_session_path, title: 'Sign In' do
           = fa_icon 'sign-in 2x', class: 'black-color'
-        = link_to user_omniauth_authorize_path(:facebook), title: 'Sign In via FB' do
-          = fa_icon 'facebook-square 2x', class: 'black-color'
