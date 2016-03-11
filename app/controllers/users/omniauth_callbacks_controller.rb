@@ -10,8 +10,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to edit_profile_path @user
       end
     else
-      session["devise.facebook_data"] = request.env["omniauth.auth"]
-      redirect_to new_user_registration_url
+      #session["devise.facebook_data"] = request.env["omniauth.auth"]
+      #redirect_to new_user_registration_url
+      raise "Oops :("
     end
   end
 end

@@ -10,7 +10,7 @@
       - if current_user
         = link_to root_path, remote: true, title: 'Home' do
           = fa_icon 'home 2x', class: 'black-color'
-        = link_to user_path(u), remote: true, title: 'Setting' do
+        = link_to user_path(u), remote: true, title: 'Profile' do
           = fa_icon 'user 2x', class: 'black-color'
         = link_to profile_path(u), remote: true, title: 'Setting' do
           = fa_icon 'cog 2x', class: 'black-color'

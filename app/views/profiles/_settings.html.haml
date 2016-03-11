@@ -11,6 +11,13 @@
         = fa_icon 'save 2x', class: 'black-color pointer', id: 'save_name', title: 'Update name'
     .row.option
       .three.columns
+        = label_tag 'locality'
+      .seven.columns
+        = text_field_tag 'locality', u.locality, class: 'u-full-width', autocomplete: 'off'
+      .two.columns.save
+        = fa_icon 'save 2x', class: 'black-color pointer', id: 'save_locality', title: 'Update locality'
+    .row.option
+      .three.columns
         = label_tag 'email'
       .seven.columns
         = email_field_tag 'email', u.email, class: 'u-full-width', disabled: true

@@ -17,12 +17,9 @@ class User < ActiveRecord::Base
                     s3_region: ENV['S3_REGION']
 
   crop_attached_file :avatar
-  validates_attachment :avatar, presence: true,
-                       content_type: {content_type: ['image/jpg', 'image/jpeg', 'image/png']},
-                       size: {in: 0..2.megabytes}
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-
-  has_many :chops
+  has_many :chops, dependent: :destroy
 
   validates :user_type, presence: true, inclusion: {in: TYPES}, on: :update
   validates :name, presence: true

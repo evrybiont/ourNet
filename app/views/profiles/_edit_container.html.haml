@@ -1,20 +1,23 @@
-#pre-setting.row
-  .two.columns
-    = image_tag u.image
+#pre_setting.row
+  .three.columns.avatar
+    = image_tag u.avatar.url(:thumb)
   .ten.columns
+    %br
     = form_for u, url: main_profile_path, method: 'PUT' do |f|
       .row
-        .two.columns
-          =f.label :male_true, 'Male', class: 'six columns'
-          =f.radio_button :male, true, class: 'six columns', checked: 'checked'
-        .two.columns
-          =f.label :male_false, 'Female', class: 'six columns'
-          =f.radio_button :male, false, class: 'six columns'
-      %br
+        .six.columns
+          = f.label :male_true, 'Male'
+        .six.columns
+          = f.radio_button :male, true, checked: 'checked'
       .row
-        .two.columns
+        .six.columns
+          = f.label :male_false, 'Female'
+        .six.columns
+          = f.radio_button :male, false
+      .row
+        .six.columns
           = f.label 'user_type', 'Type'
-        .three.columns
+        .six.columns
           = f.select 'user_type', options_for_select(User::TYPES)
       .row
         = f.submit 'Save'

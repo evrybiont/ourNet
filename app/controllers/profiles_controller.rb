@@ -5,7 +5,11 @@ class ProfilesController < ApplicationController
   before_action :check_permissions!, except: [:edit, :main]
 
   def main
-    update_u main_param
+    u.user_type = params[:user][:user_type]
+    u.male = params[:user][:male]
+    u.info_full = true
+    u.save(validate: false)
+
     redirect_to profile_path u
   end
 
@@ -35,7 +39,7 @@ class ProfilesController < ApplicationController
   private
 
   def param
-    params.permit :name
+    params.permit :name, :locality
   end
 
   def main_param
@@ -45,9 +49,9 @@ class ProfilesController < ApplicationController
 
   def update_u data
     if u.update data
-      flash.now[:success] = 'Name has successfully updated'
+      flash.now[:success] = "#{params[:attr]} has successfully updated"
     else
-      flash.now[:error] = 'You should enter your name'
+      flash.now[:error] = "You should enter your #{params[:attr]}"
     end
   end
 

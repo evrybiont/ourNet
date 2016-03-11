@@ -9,9 +9,10 @@
       .type
         = fa_icon 'user-secret', class: 'option'
         = @user.user_type
-      .location
-        = fa_icon 'map-marker', class: 'option'
-        Cherckasy
+      - if @user.locality.present?
+        .location
+          = fa_icon 'map-marker', class: 'option'
+          = @user.locality
       .email
         = fa_icon 'envelope', class: 'option'
         = @user.email
