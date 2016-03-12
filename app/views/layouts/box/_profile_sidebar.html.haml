@@ -5,8 +5,9 @@
       -#- if go_back?
         = link_to request.headers['HTTP_REFERER'], remote: true, title: 'Go Back to page', class: 'u-pull-left' do
           = fa_icon 'reply 2x', class: 'black-color'
-      = link_to chops_path, title: 'Chop list', remote: true do
-        = fa_icon 'gavel 2x', class: 'black-color'
+      - if u.user_type == 'Builder'
+        = link_to chops_path, title: 'Chop list', remote: true do
+          = fa_icon 'gavel 2x', class: 'black-color'
       -#= link_to '#', title: 'Parts' do
         = fa_icon 'gears 2x', class: 'black-color'
       -#= link_to '#', title: 'Tools' do

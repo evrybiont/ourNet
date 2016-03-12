@@ -2,6 +2,7 @@ class ChopsController < ApplicationController
   layout 'profile'
   before_action :authenticate_user!
   before_action :check_permissions!
+  before_action :only_builder!
 
   def index
     load_chops
@@ -104,5 +105,9 @@ class ChopsController < ApplicationController
 
   def load_images
     @chop_images = @chop.images.map{|i| [i.data.url]}
+  end
+
+  def only_builder!
+    redirect_to root_path unless u.user_type == 'Builder'
   end
 end
