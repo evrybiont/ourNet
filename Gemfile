@@ -23,6 +23,7 @@ gem 'nested_form'
 gem 'aws-s3', require: false
 gem 'autoprefixer-rails'
 gem 'papercrop'
+gem 'socialization'
 
 group :development, :test do
   gem 'byebug'

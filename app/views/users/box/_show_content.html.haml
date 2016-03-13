@@ -22,15 +22,17 @@
       %hr
       .activity.row.gn-c
         = link_to '#', remote: true, class: 'link' do
-          %strong.count 0
+          %strong.count= @user.reload.followers_count
           %span.title Followers
         = link_to '#', remote: true, class: 'link' do
           %strong.count 0
           %span.title Starred
         = link_to '#', remote: true, class: 'link' do
-          %strong.count 0
+          %strong.count= @user.reload.followees_count
           %span.title Following
       %hr
+        .f-btn
+          = follow_button
 
 
   .nine.columns.options

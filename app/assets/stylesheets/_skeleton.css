@@ -517,7 +517,8 @@ there.
   .stuff #detail_user .three.columns {width: 29%}
   .stuff #detail_user .three.columns .avatar {text-align: left;}
   .stuff #detail_user .three.columns hr,
-  .stuff #detail_user .three.columns .activity {width: 230px;}
+  .stuff #detail_user .three.columns .activity,
+  .stuff #detail_user .three.columns .f-btn {width: 230px;}
   .stuff #detail_user .nine.columns {margin-left: 4%; width: 67%;}
 
   /*========================*/

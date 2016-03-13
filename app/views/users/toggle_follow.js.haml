@@ -1,0 +1,3 @@
+$('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
+$('.stuff').html("#{j (render 'users/box/show_content')}");
+window.history.pushState('', '', "#{user_path(@user)}");

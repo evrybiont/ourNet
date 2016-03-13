@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     respond_formats
   end
 
+  def toggle_follow
+    u.toggle_follow!(load_user)
+    respond_formats
+  end
+
   private
 
   def load_user
