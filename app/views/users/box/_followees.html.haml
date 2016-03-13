@@ -1,0 +1,5 @@
+.three.columns.gn-c
+  = link_to user_path(user), remote: true do
+    = image_tag user.avatar.url(:thumb)
+  %div= link_to user.name, user_path(user), remote: true
+  %div= follow_button(user)

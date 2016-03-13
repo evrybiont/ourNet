@@ -37,10 +37,10 @@ module ApplicationHelper
     end
   end
 
-  def follow_button
-    unless u == @user
-      name = u.follows?(@user) ? 'Unfollow' : 'Follow'
-      link_to name, toggle_follow_user_path(@user), remote:true, class: 'button'
+  def follow_button user
+    unless u == user
+      name = u.follows?(user) ? 'Unfollow' : 'Follow'
+      link_to name, toggle_follow_user_path(user), remote:true, class: 'button'
     end
   end
 

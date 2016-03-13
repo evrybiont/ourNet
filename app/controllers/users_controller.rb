@@ -17,6 +17,11 @@ class UsersController < ApplicationController
     respond_formats
   end
 
+  def following
+    @users = load_user.followees(User)
+    respond_formats
+  end
+
   private
 
   def load_user
