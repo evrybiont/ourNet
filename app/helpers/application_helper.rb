@@ -44,6 +44,10 @@ module ApplicationHelper
     end
   end
 
+  def highlight user
+    u.follows?(user) ? 'unfollow' : 'follow'
+  end
+
   private
 
   def not_same?
