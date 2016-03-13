@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     get 'toggle_follow', on: :member
     get 'following', on: :member
+    get 'follower', on: :member
   end
 
   resources :videos, only: :index

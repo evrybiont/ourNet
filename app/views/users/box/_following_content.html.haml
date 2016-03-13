@@ -1,12 +1,15 @@
-#following_content.row
-  = link_to @user.name, user_path(@user), remote: true
-%hr
-- step = 0
-
-- while @users[step]
+#following_content
   .row
-    - 4.times do |i|
-      - if @users[i + step].nil?
-        - break
-      = render partial: 'users/box/followees', locals: {user: @users[i + step]}
-    - step += 4
+    = link_to user_path(@user), remote: true do
+      = image_tag @user.avatar.url(:thumb)
+    = link_to @user.name, user_path(@user), remote: true
+  %hr
+  - step = 0
+
+  - while @users[step]
+    .row
+      - 4.times do |i|
+        - if @users[i + step].nil?
+          - break
+        = render partial: 'users/box/followees', locals: {user: @users[i + step]}
+      - step += 4

@@ -21,7 +21,7 @@
         = @user.created_at.strftime("Joined on %e %b %Y")
       %hr
       .activity.row.gn-c
-        = link_to '#', remote: true, class: 'link' do
+        = link_to follower_user_path(@user), remote: true, class: 'link' do
           %strong.count= @user.reload.followers_count
           %span.title Followers
         = link_to '#', remote: true, class: 'link' do
