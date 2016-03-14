@@ -1,8 +1,8 @@
 #following_content
   .row
-    = link_to user_path(@user), remote: true do
-      = image_tag @user.avatar.url(:thumb)
-    = link_to @user.name, user_path(@user), remote: true
+    = link_to user_path(@user), remote: true, class: 'super' do
+      = image_tag @user.avatar.url(:thumb), class: 'super'
+    = link_to @user.name, user_path(@user), remote: true, class: 'super'
   %hr
   - step = 0
 

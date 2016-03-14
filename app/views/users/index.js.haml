@@ -1,3 +1,4 @@
 $('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
 $('.stuff').html("#{j (render partial: 'members_collection', locals: {users: @users})}");
+new Behavior.Navigation()
 window.history.pushState('', '', '/users');

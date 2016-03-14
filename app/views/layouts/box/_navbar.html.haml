@@ -3,19 +3,19 @@
     %span.main-title Broken Rules (BETA VERSION)
   .row
     .four.columns.logo
-      = link_to root_path, remote: true, class: 'navbar-brand' do
-        = image_tag 'logo.jpg', class: 'nav-logo'
+      = link_to root_path, remote: true, class: 'navbar-brand super' do
+        = image_tag 'logo.jpg', class: 'nav-logo super'
 
     .eight.columns.nav-menu
       - if current_user
-        = link_to root_path, remote: true, title: 'Home' do
-          = fa_icon 'home 2x', class: 'black-color'
-        = link_to user_path(u), remote: true, title: 'Profile' do
-          = fa_icon 'user 2x', class: 'black-color'
-        = link_to profile_path(u), remote: true, title: 'Setting' do
-          = fa_icon 'cog 2x', class: 'black-color'
-        = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out' do
-          = fa_icon 'sign-out 2x', class: 'black-color'
+        = link_to root_path, remote: true, title: 'Home', class: 'super' do
+          = fa_icon 'home 2x', class: 'black-color super'
+        = link_to user_path(u), remote: true, title: 'Profile', class: 'super' do
+          = fa_icon 'user 2x', class: 'black-color super'
+        = link_to profile_path(u), remote: true, title: 'Setting', class: 'super' do
+          = fa_icon 'cog 2x', class: 'black-color super'
+        = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out', class: 'super' do
+          = fa_icon 'sign-out 2x', class: 'black-color super'
       - else
-        = link_to new_user_session_path, title: 'Sign In' do
-          = fa_icon 'sign-in 2x', class: 'black-color'
+        = link_to new_user_session_path, title: 'Sign In', class: 'super' do
+          = fa_icon 'sign-in 2x', class: 'black-color super'

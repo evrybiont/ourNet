@@ -1,3 +1,4 @@
 $('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
 $('.stuff').html("#{j (render 'users/box/following_content')}");
+new Behavior.Navigation()
 window.history.pushState('', '', "#{following_user_path(@user)}");

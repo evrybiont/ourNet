@@ -1,5 +1,5 @@
 App.registerBehavior('ImageGallery')
 
-class Behavior.ImageGallery extends Behavior.Ashared
+class Behavior.ImageGallery
   constructor: ()->
     $('#projector').knack(data: $('#projector').data('data'))

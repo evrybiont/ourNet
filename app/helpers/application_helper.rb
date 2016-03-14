@@ -19,10 +19,6 @@ module ApplicationHelper
     AWS::S3::S3Object.url_for(song_key, BUCKET, :authenticated => false)
   end
 
-  def go_back?
-    request.headers['HTTP_REFERER'].present? && not_same?
-  end
-
   def display_avatar user, can_change
     title = can_change ? 'Change your avatar' : 'Avatar'
     pointer = can_change ? 'pointer' : ''
@@ -46,11 +42,5 @@ module ApplicationHelper
 
   def highlight user
     u.follows?(user) ? 'unfollow' : 'follow'
-  end
-
-  private
-
-  def not_same?
-    request.headers['HTTP_REFERER'] != request.headers['REQUEST_URI']
   end
 end
