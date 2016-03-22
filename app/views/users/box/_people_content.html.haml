@@ -1,4 +1,4 @@
-#following_content
+#people_content
   .row
     = link_to user_path(@user), remote: true, class: 'super' do
       = image_tag @user.avatar.url(:thumb), class: 'super'
@@ -11,5 +11,5 @@
       - 4.times do |i|
         - if @users[i + step].nil?
           - break
-        = render partial: 'users/box/followees', locals: {user: @users[i + step]}
+        = render partial: 'users/box/people', locals: {user: @users[i + step]}
       - step += 4

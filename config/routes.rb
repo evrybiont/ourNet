@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   resources :dashboards, only: [:index, :show]
 
   resources :users, only: [:index, :show] do
-    get 'toggle_follow', on: :member
+    put 'toggle_follow', on: :member
     get 'following', on: :member
-    get 'follower', on: :member
+    get 'followers', on: :member
   end
 
   resources :videos, only: :index

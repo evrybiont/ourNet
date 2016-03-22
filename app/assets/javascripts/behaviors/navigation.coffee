@@ -3,13 +3,13 @@ App.registerBehavior('Navigation')
 class Behavior.Navigation extends Behavior.Ashared
   constructor: ->
     $('.super').on('click', ->
-      console.log 'e'
       clearInterval(window.fnInterval)
       setTimeout(@initLoop, 300)
     )
     setTimeout(@initLoop, 300)
 
   goBack: =>
+    console.log('window.location.href')
     console.log(window.location.href)
     actions = ['/dashboards']
     data =
@@ -24,7 +24,10 @@ class Behavior.Navigation extends Behavior.Ashared
 
     window.fnInterval = setInterval (=>
       console.log('running')
+      console.log(window.location.href)
+      console.log(href)
       if window.location.href != href
+        console.log('go back =========')
         @goBack()
         clearInterval(window.fnInterval)
     ), 100

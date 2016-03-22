@@ -2,4 +2,4 @@ $('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
 $('.stuff').html("#{j (render 'users/box/people_content')}");
 new Behavior.Navigation()
 new Behavior.ToggleFollow()
-window.history.pushState('', '', "#{following_user_path(@user)}");
+window.history.pushState('', '', "#{followers_user_path(@user)}");

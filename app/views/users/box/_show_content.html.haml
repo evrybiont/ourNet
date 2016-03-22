@@ -21,7 +21,7 @@
         = @user.created_at.strftime("Joined on %e %b %Y")
       %hr
       .activity.row.gn-c
-        = link_to follower_user_path(@user), remote: true, class: 'link super' do
+        = link_to followers_user_path(@user), remote: true, class: 'link super' do
           %strong.count.super= @user.reload.followers_count
           %span.title.super Followers
         = link_to '#', remote: true, class: 'link super' do
@@ -32,7 +32,7 @@
           %span.title.super Following
       %hr
         .f-btn
-          = follow_button(@user)
+          = follow_button('profile', nil, @user)
 
 
   .nine.columns.options

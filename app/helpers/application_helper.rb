@@ -33,10 +33,10 @@ module ApplicationHelper
     end
   end
 
-  def follow_button user
+  def follow_button page, uid, user
     unless u == user
       name = u.follows?(user) ? 'Unfollow' : 'Follow'
-      link_to name, toggle_follow_user_path(user), remote:true, class: 'button'
+      button_tag name, title: "#{name} #{user.name}", class: 'button toggle_follow', data: {page: page, uid: uid, action: toggle_follow_user_path(user)}
     end
   end
 
