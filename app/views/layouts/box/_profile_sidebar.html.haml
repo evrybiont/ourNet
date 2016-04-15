@@ -3,8 +3,8 @@
   - if u.try(:info_full?)
     .row.menu
       - if u.user_type == 'Builder'
-        = link_to chops_path, title: 'Chop list', class: 'super', remote: true do
-          = fa_icon 'gavel 2x', class: 'black-color super'
+        = link_to chops_path, title: 'Chop list', data: {push: true} do
+          = fa_icon 'gavel 2x', class: 'black-color'
       -#= link_to '#', title: 'Parts' do
         = fa_icon 'gears 2x', class: 'black-color'
       -#= link_to '#', title: 'Tools' do
