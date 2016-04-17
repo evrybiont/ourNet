@@ -13,12 +13,13 @@ class UsersController < ApplicationController
   end
 
   def toggle_follow
-    u.toggle_follow!(load_user)
+    u.toggle_follow!(User.find params[:id])
     if params[:page] == 'following'
       @users = u.followees(User)
     elsif params[:page] == 'followers'
       @users = u.followers(User)
     end
+    load_user
     respond_formats
   end
 
@@ -36,7 +37,8 @@ class UsersController < ApplicationController
   private
 
   def load_user
-    @user = User.find params[:id]
+    id = params[:uid].present? ? params[:uid] : params[:id]
+    @user = User.find id
   end
 
   def load_following

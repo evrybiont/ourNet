@@ -1,4 +1,0 @@
-$('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
-$('.stuff').html("#{j (render 'users/box/people_content')}");
-new Behavior.ToggleFollow()
-window.history.pushState('', '', "#{followers_user_path(@user)}");

@@ -16,7 +16,6 @@ $(document).ready ->
   $(document).off('page:done').on(
     'page:done'
     (event, $target, status, url, data) ->
-      console.log("Wiselinks status: '#{status}'")
       tag = $(".stuff").find("[data-behavior]")
 
       if tag.length

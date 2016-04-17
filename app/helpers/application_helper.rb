@@ -36,7 +36,8 @@ module ApplicationHelper
   def follow_button page, uid, user
     unless u == user
       name = u.follows?(user) ? 'Unfollow' : 'Follow'
-      button_tag name, title: "#{name} #{user.name}", class: 'button toggle_follow', data: {page: page, uid: uid, action: toggle_follow_user_path(user)}
+      button_tag name, title: "#{name} #{user.name}", class: 'button toggle_follow',
+                 data: {page: page, uid: uid, action: toggle_follow_user_path(user), behavior: 'ToggleFollow'}
     end
   end
 
