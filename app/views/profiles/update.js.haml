@@ -1,9 +1,9 @@
 $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
-$('.stuff').html("#{j (render 'settings')}");
+$('.stuff').html("#{j (render 'layouts/box/profile_sidebar')}");
+$('.stuff').append("#{j (render 'settings')}");
 new Behavior.Flash()
 new Behavior.Profile()
 new Behavior.Avatar()
 - if flash[:error]
   $('.stuff #name').val("#{u.reload.name}");
   $('.stuff #locality').val("#{u.reload.locality}");
-window.history.pushState('', '', "#{profile_path(u)}");

@@ -16,10 +16,12 @@ $(document).ready ->
   $(document).off('page:done').on(
     'page:done'
     (event, $target, status, url, data) ->
-      tag = $(".stuff").find("[data-behavior]")
+      tags = $(".stuff").find("[data-behavior]")
 
-      if tag.length
-        new Behavior[tag.data('behavior')]
+      if tags.length
+        for tag in tags
+          do ->
+            new Behavior[tag.dataset.behavior]
     )
 
 $ ->
