@@ -1,17 +1,17 @@
 .row.u-chops
   .row.add-chop
-    = link_to new_chop_path, remote: true, title: 'Add chop' do
+    = link_to new_chop_path, data: {push: true}, title: 'Add chop' do
       = fa_icon 'plus-circle 2x', class: 'black-color'
 
   - @chops.each do |chop|
     .row.u-chop
       .nine.columns
-        = link_to chop.name, chop_path(chop), remote: true
+        = link_to chop.name, chop_path(chop), data: {push: true}
       .one.column
         = link_to 'javascript:void(0)', title: chop.state_title do
           = fa_icon "#{chop.state_icon} 2x", class: 'black-color'
       .one.column
-        = link_to edit_chop_path(chop), remote: true, title: 'Edit chop' do
+        = link_to edit_chop_path(chop), data: {push: true}, title: 'Edit chop' do
           = fa_icon 'edit 2x', class: 'black-color'
       .one.column
         = link_to chop_path(chop), remote: true, method: 'DELETE', title: 'Remove chop', data: {confirm: 'Are you sure?'} do
