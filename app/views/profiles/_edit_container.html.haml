@@ -19,5 +19,5 @@
           = f.label 'user_type', 'Type'
         .six.columns
           = f.select 'user_type', options_for_select(User::TYPES)
-      .row
+      .row{data: {behavior: 'Flash', time: '5000'}}
         = f.submit 'Save'

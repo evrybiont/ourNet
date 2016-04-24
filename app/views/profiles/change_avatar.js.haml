@@ -1,7 +1,8 @@
 - if params[:crop_avatar]
   $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
   $('.menu').show();
-  $('.stuff').html("#{j (render 'settings')}");
+  $('.stuff').html("#{j (render 'layouts/box/profile_sidebar')}");
+  $('.stuff').append("#{j (render 'settings')}");
   new Behavior.Flash()
   new Behavior.Profile()
   new Behavior.Avatar()
@@ -20,5 +21,3 @@
   $('.spinner-wrap').hide()
   }, 3000);
   new Behavior.Spinner()
-
-window.history.pushState('', '', "#{profile_path(u)}");

@@ -13,22 +13,26 @@ class UsersController < ApplicationController
   end
 
   def toggle_follow
-    u.toggle_follow!(load_user)
-    if params[:page] == 'following'
-      @users = u.followees(User)
-    elsif params[:page] == 'followers'
-      @users = u.followers(User)
+    u.toggle_follow!(User.find params[:id])
+    load_user
+    @page = params[:page]
+    if @page == 'following'
+      @users = @user.followees(User).sort_by(&:created_at)
+    elsif @page == 'followers'
+      @users = @user.followers(User).sort_by(&:created_at)
     end
     respond_formats
   end
 
   def following
     load_following
+    @page = 'following'
     respond_formats
   end
 
   def followers
     load_followers
+    @page = 'followers'
     respond_formats
   end
 
@@ -36,14 +40,15 @@ class UsersController < ApplicationController
   private
 
   def load_user
-    @user = User.find params[:id]
+    id = params[:uid].present? ? params[:uid] : params[:id]
+    @user = User.find id
   end
 
   def load_following
-    @users = load_user.followees(User)
+    @users = load_user.followees(User).sort_by(&:created_at)
   end
 
   def load_followers
-    @users = load_user.followers(User)
+    @users = load_user.followers(User).sort_by(&:created_at)
   end
 end

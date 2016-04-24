@@ -1,5 +1,5 @@
 .row
   .six.columns.gn-c
-    = link_to 'All music', list_musics_path, remote: true, class: 'button'
+    = link_to 'All music', list_musics_path, class: 'button', data: {push: true}
   .six.columns.gn-c
-    = link_to 'Albums', albums_musics_path, remote: true, class: 'button'
+    = link_to 'Albums', albums_musics_path, class: 'button', data: {push: true}

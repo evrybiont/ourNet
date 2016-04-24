@@ -1,5 +1,6 @@
-$('#sidebar').replaceWith("#{j (render 'layouts/box/sidebar')}");
+$('.stuff').html("#{j (render 'layouts/box/sidebar')}");
 - if params[:page] == 'profile'
-  $('.stuff').html("#{j (render 'users/box/show_content')}");
+  $('.stuff').append("#{j (render 'users/box/show_content')}");
 - else
-  $('.stuff').html("#{j (render 'users/box/people_content')}");
+  $('.stuff').append("#{j (render 'users/box/people_content')}");
+new Behavior.ToggleFollow()

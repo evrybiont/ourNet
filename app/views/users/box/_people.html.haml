@@ -1,5 +1,5 @@
 .three.columns.gn-c
-  = link_to user_path(user), class: 'super', remote: true do
-    = image_tag user.avatar.url(:thumb), class: 'super'
-  %div= link_to user.name, user_path(user), class: 'super', remote: true
-  %div= follow_button(params[:action], @user.id, user)
+  = link_to user_path(user), data: {push: true} do
+    = image_tag user.avatar.url(:thumb)
+  %div= link_to user.name, user_path(user), data: {push: true}
+  %div= follow_button(@page, @user.id, user)

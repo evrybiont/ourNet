@@ -1,4 +1,5 @@
-$('.stuff').html("#{j (render 'chops/box/index_content')}")
+$('.stuff').html("#{j (render partial: 'layouts/box/profile_sidebar')}");
+$('.stuff').append("#{j (render 'chops/box/index_content')}")
 $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
 new Behavior.Flash()
-window.history.pushState('', '', "#{chops_path}");
+$('.spinner-wrap').hide();

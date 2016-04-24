@@ -9,7 +9,7 @@ class Chop < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  scope :active, ->{where(visible: true).order(created_at: :desc)}
+  scope :active, ->{where(visible: true).includes(:images).order(created_at: :desc)}
 
 
   def state_title

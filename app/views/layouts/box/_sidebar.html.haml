@@ -12,11 +12,11 @@
         = fa_icon 'eye 2x', class: 'black-color'
       -#= link_to '#', title: 'Events' do
         = fa_icon 'beer 2x', class: 'black-color'
-      = link_to dashboard_musics_path, remote: true, title: 'Musics', class: 'super' do
+      = link_to dashboard_musics_path, title: 'Musics', data: {push: true} do
         = fa_icon 'music 2x', class: 'black-color super'
       -#= link_to '#', title: 'Videos' do
         = fa_icon 'file-video-o 2x', class: 'black-color'
       -#= link_to '#', title: 'Photos' do
         = fa_icon 'photo 2x', class: 'black-color'
-      = link_to users_path, remote: true, title: 'Members', class: 'super' do
+      = link_to users_path, title: 'Members', data: {push: true} do
         = fa_icon 'users 2x', class: 'black-color super'

@@ -24,6 +24,7 @@ gem 'aws-s3', require: false
 gem 'autoprefixer-rails'
 gem 'papercrop'
 gem 'socialization'
+gem 'wiselinks'
 
 group :development, :test do
   gem 'byebug'

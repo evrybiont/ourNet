@@ -11,7 +11,18 @@ Elemental.addNamespace(App)
 
 $(document).ready ->
   Elemental.load document
-  return
+  window.wiselinks = new Wiselinks($('.stuff'))
+
+  $(document).off('page:done').on(
+    'page:done'
+    (event, $target, status, url, data) ->
+      tags = $(".stuff").find("[data-behavior]")
+
+      if tags.length
+        for tag in tags
+          do ->
+            new Behavior[tag.dataset.behavior]
+    )
 
 $ ->
   $('a').bind 'ajax:error', (event, jqXHR, ajaxSettings, thrownError) ->

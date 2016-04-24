@@ -6,6 +6,7 @@
 //= require knack-rails
 //= require jquery.jcrop
 //= require papercrop
+//= require wiselinks
 
 //= require base
 //= require_tree ./helpers/

@@ -15,21 +15,21 @@
           = @user.locality
       .email
         = fa_icon 'envelope', class: 'option'
-        = @user.email
+        %span= @user.email
       .joined
         = fa_icon 'clock-o', class: 'option'
         = @user.created_at.strftime("Joined on %e %b %Y")
       %hr
       .activity.row.gn-c
-        = link_to followers_user_path(@user), remote: true, class: 'link super' do
-          %strong.count.super= @user.reload.followers_count
-          %span.title.super Followers
-        = link_to '#', remote: true, class: 'link super' do
-          %strong.count.super 0
-          %span.title.super Starred
-        = link_to following_user_path(@user), remote: true, class: 'link super' do
-          %strong.count.super= @user.reload.followees_count
-          %span.title.super Following
+        = link_to followers_user_path(@user), data: {push: true}, class: 'link' do
+          %strong.count= @user.reload.followers_count
+          %span.title Followers
+        = link_to '#', data: {push: true}, class: 'link' do
+          %strong.count 0
+          %span.title Starred
+        = link_to following_user_path(@user), data: {push: true}, class: 'link' do
+          %strong.count= @user.reload.followees_count
+          %span.title Following
       %hr
         .f-btn
           = follow_button('profile', nil, @user)
