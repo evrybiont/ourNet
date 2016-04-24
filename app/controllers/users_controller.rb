@@ -17,9 +17,9 @@ class UsersController < ApplicationController
     load_user
     @page = params[:page]
     if @page == 'following'
-      @users = @user.followees(User)
+      @users = @user.followees(User).sort_by(&:created_at)
     elsif @page == 'followers'
-      @users = @user.followers(User)
+      @users = @user.followers(User).sort_by(&:created_at)
     end
     respond_formats
   end
@@ -45,10 +45,10 @@ class UsersController < ApplicationController
   end
 
   def load_following
-    @users = load_user.followees(User)
+    @users = load_user.followees(User).sort_by(&:created_at)
   end
 
   def load_followers
-    @users = load_user.followers(User)
+    @users = load_user.followers(User).sort_by(&:created_at)
   end
 end
