@@ -436,6 +436,14 @@ there.
   .stuff .chop .image {width: 100%}
 
   .stuff .u-chops .u-chop .one.column {width: 33.3333333333%;}
+
+  #detail_user .data .email span{
+    margin-left: 5px;
+    max-width: 80%;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+  }
   /*========================*/
 }
 
@@ -521,6 +529,7 @@ there.
   .stuff #detail_user .three.columns .f-btn {width: 230px;}
   .stuff #detail_user .nine.columns {margin-left: 4%; width: 67%;}
 
+  #detail_user .data .email span{max-width: 21%;}
   /*========================*/
 }
 

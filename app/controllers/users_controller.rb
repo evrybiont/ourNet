@@ -14,22 +14,25 @@ class UsersController < ApplicationController
 
   def toggle_follow
     u.toggle_follow!(User.find params[:id])
-    if params[:page] == 'following'
-      @users = u.followees(User)
-    elsif params[:page] == 'followers'
-      @users = u.followers(User)
-    end
     load_user
+    @page = params[:page]
+    if @page == 'following'
+      @users = @user.followees(User)
+    elsif @page == 'followers'
+      @users = @user.followers(User)
+    end
     respond_formats
   end
 
   def following
     load_following
+    @page = 'following'
     respond_formats
   end
 
   def followers
     load_followers
+    @page = 'followers'
     respond_formats
   end
 

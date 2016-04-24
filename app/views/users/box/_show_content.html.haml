@@ -15,7 +15,7 @@
           = @user.locality
       .email
         = fa_icon 'envelope', class: 'option'
-        = @user.email
+        %span= @user.email
       .joined
         = fa_icon 'clock-o', class: 'option'
         = @user.created_at.strftime("Joined on %e %b %Y")

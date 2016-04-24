@@ -2,4 +2,4 @@
   = link_to user_path(user), data: {push: true} do
     = image_tag user.avatar.url(:thumb)
   %div= link_to user.name, user_path(user), data: {push: true}
-  %div= follow_button(params[:action], @user.id, user)
+  %div= follow_button(@page, @user.id, user)
