@@ -1,0 +1,16 @@
+#stars_content
+  - @stars.each do |star|
+    .star
+      .row
+        .ten.columns
+          = link_to star.user_name, user_path(star.user_id)
+          %span /
+          = link_to star.name, dashboard_path(star)
+        .two.columns.action
+          = fa_icon 'star', class: 'option'
+          = star_title(star)
+      .row.created
+        = star.created_at.strftime("Starred on %e %b %Y")
+    %hr
+  = blank_content @stars
+  %span{data: {behavior: 'Like'}}

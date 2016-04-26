@@ -2,7 +2,14 @@ class ChopsController < ApplicationController
   layout 'profile'
   before_action :authenticate_user!
   before_action :check_permissions!
-  before_action :only_builder!
+  before_action :only_builder!, except: :like
+
+  def like
+    @chop = Chop.friendly.find params[:id]
+    @liked = u.toggle_like! @chop
+    @likers_count = @chop.reload.likers_count
+    respond_formats
+  end
 
   def index
     load_chops

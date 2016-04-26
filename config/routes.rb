@@ -26,11 +26,15 @@ Rails.application.routes.draw do
     put 'toggle_follow', on: :member
     get 'following', on: :member
     get 'followers', on: :member
+    get 'stars', on: :member
   end
 
   resources :videos, only: :index
   resources :photos, only: :index
-  resources :chops
+
+  resources :chops do
+    put 'like', on: :member
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

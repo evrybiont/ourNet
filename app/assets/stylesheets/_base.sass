@@ -21,6 +21,10 @@ a
 .hd
   display: none
 
+.blank-content
+  font-weight: bold
+  text-align: center
+
 .devise
   .column, .columns
     float: none
@@ -124,3 +128,41 @@ a
 #people_content
   img
     width: 100px
+
+#chop-hd-container
+  .head
+    font-family: 'Comic Sans MS'
+    margin-bottom: 20px
+    .name
+      font-size: 19px
+    .like
+      border: 1px solid
+      border-radius: 4px
+      display: inline-flex
+      float: right
+      font-size: 11px
+      .like-click
+        border-right: 1px solid
+        width: 67px
+        i
+          margin-left: 5px
+        &:hover
+          background: black
+          cursor: pointer
+          color: white
+        .title
+          float: right
+          margin-right: 7px
+          text-align: center
+          width: 40px
+      .count
+        text-align: center
+        width: 40px
+
+#stars_content
+  margin-top: 50px
+  .star
+    .action
+      text-align: right
+    .created
+      font-size: 12px

@@ -41,7 +41,31 @@ module ApplicationHelper
     end
   end
 
+  def like_title tagged, chop
+    text = u.likes?(chop) ? 'Unstar' : 'Star'
+    if tagged
+      content_tag(:div, text, class: 'title')
+    else
+      text = text=='Unstar' ? 'Не подобається' : 'Подобається'
+      "#{text} #{chop.name}"
+    end
+  end
+
+  def star_title chop
+    text = u.likes?(chop) ? 'Unstar' : 'Star'
+    title = text=='Unstar' ? 'Не подобається' : 'Подобається'
+    id = chop.name.gsub(' ','_')
+    content_tag(:span, text, id: id, class: 'pointer star-click', title: "#{title} #{chop.name}", data: {action: like_chop_path(chop), tag: id})
+  end
+
   def highlight user
     u.follows?(user) ? 'unfollow' : 'follow'
+  end
+
+  def blank_content data
+    if data.blank?
+      who = u.id == params[:id].to_i ? 'You' : @user.name
+      content_tag(:p, "#{who} don’t have any starred chops yet.", class: 'blank-content')
+    end
   end
 end

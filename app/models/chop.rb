@@ -1,9 +1,12 @@
 class Chop < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
+  acts_as_likeable
 
   belongs_to :user
   has_many :images, dependent: :destroy
+
+  delegate :id, :name, to: :user, prefix: true
 
   validates :name, presence: true, uniqueness: true
 

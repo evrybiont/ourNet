@@ -1,0 +1,18 @@
+#chop-hd-container.row
+  .row.head
+    .nine.columns.name= @chop.name
+    .three.columns
+      .like
+        - if u
+          .like-click{title: like_title(false, @chop), data: {behavior: 'Like', action: like_chop_path(@chop)}}
+            = fa_icon 'star', class: 'option'
+            = like_title(true, @chop)
+        - else
+          .like-click{title: 'Потрібно залогінитись щоб проголосувати'}
+            = fa_icon 'star', class: 'option'
+            .title Starred
+        .count= @chop.likers_count
+  .row
+    #projector{data: {behavior: 'ImageGallery', data: @chop_images}}
+  .row
+    %p.desc= @chop.description

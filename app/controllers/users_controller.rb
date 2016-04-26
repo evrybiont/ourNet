@@ -36,6 +36,9 @@ class UsersController < ApplicationController
     respond_formats
   end
 
+  def stars
+    load_stars
+  end
 
   private
 
@@ -50,5 +53,9 @@ class UsersController < ApplicationController
 
   def load_followers
     @users = load_user.followers(User).sort_by(&:created_at)
+  end
+
+  def load_stars
+    @stars = load_user.likees(Chop).sort_by(&:created_at)
   end
 end

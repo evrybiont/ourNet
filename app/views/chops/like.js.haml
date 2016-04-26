@@ -1,0 +1,14 @@
+- if @liked
+  $('.like .title').html('Unstar')
+  $('#' + "#{params[:tag]}").html('Unstar')
+-else
+  $('.like .title').html('Star')
+  $('#' + "#{params[:tag]}").html('Star')
+
+$('.like .count').html("#{@likers_count}")
+
+title = "#{like_title(false, @chop)}"
+$('.like-click').attr('title', title)
+$('#' + "#{params[:tag]}").attr('title', title)
+
+new Behavior.Like()

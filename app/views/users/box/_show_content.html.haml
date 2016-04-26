@@ -24,8 +24,8 @@
         = link_to followers_user_path(@user), data: {push: true}, class: 'link' do
           %strong.count= @user.reload.followers_count
           %span.title Followers
-        = link_to '#', data: {push: true}, class: 'link' do
-          %strong.count 0
+        = link_to stars_user_path(@user), data: {push: true}, class: 'link' do
+          %strong.count= @user.likees_count
           %span.title Starred
         = link_to following_user_path(@user), data: {push: true}, class: 'link' do
           %strong.count= @user.reload.followees_count
