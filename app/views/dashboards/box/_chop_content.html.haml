@@ -1,6 +1,6 @@
 #chop-hd-container.row
   .row.head
-    .nine.columns.name= @chop.name
+    .eight.columns.name= @chop.name
     .three.columns
       .like
         - if u
@@ -12,7 +12,12 @@
             = fa_icon 'star', class: 'option'
             .title Starred
         .count= @chop.likers_count
+    .one.columns.owner
+      = link_to user_path(@chop.user), title: 'Власник', data: {push: true} do
+        = fa_icon 'user-secret 2x', class: 'black-color'
   .row
     #projector{data: {behavior: 'ImageGallery', data: @chop_images}}
   .row
     %p.desc= @chop.description
+  .row.youtube-container
+    = youtube_video('https://www.youtube.com/watch?v=wlXMfKn0RhM')

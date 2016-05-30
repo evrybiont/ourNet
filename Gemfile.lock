@@ -127,6 +127,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mediaelement_rails (0.8.2)
+      jquery-rails (>= 1.0)
+      railties (>= 3.1)
     method_source (0.8.2)
     mime-types (2.6.1)
     mimemagic (0.3.0)
@@ -248,6 +251,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   knack-rails
+  mediaelement_rails
   nested_form
   omniauth
   omniauth-facebook

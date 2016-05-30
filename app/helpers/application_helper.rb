@@ -68,4 +68,9 @@ module ApplicationHelper
       content_tag(:p, "#{who} don’t have any starred chops yet.", class: 'blank-content')
     end
   end
+
+  def youtube_video(url)
+    id = url.split('=').last
+    content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{id}")
+  end
 end
