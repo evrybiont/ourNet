@@ -47,11 +47,26 @@ module Papercrop
     # @param opts [Hash]
     def cropbox(attachment, opts = {})
       puts '==='*300
+      puts attachment.inspect
+      puts opts.inspect
+
+
+      puts '==='*300
+
       attachment      = attachment.to_sym
+      puts 'attachment   -' + attachment.inspect
+
       original_width  = self.object.image_geometry(attachment, :original).width.to_i
+      puts 'original_width   - ' + original_width.inspect
+
       original_height = self.object.image_geometry(attachment, :original).height.to_i
+      puts 'original_height   -- ' + original_height.inspect
+
       box_width       = opts.fetch :width,  original_width
+      puts 'box_width  -- ' + box_width.inspect
+
       aspect          = opts.fetch :aspect, self.object.send(:"#{attachment}_aspect")
+      puts 'aspect  -- ' + aspect.inspect
 
       if self.object.send(attachment).class == Paperclip::Attachment
         puts '#'*300
