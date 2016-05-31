@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426110822) do
+ActiveRecord::Schema.define(version: 20160531092429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160426110822) do
     t.string   "slug"
     t.boolean  "visible",      default: true
     t.integer  "likers_count", default: 0
+    t.string   "youtube_url"
   end
 
   add_index "chops", ["user_id"], name: "index_chops_on_user_id", using: :btree

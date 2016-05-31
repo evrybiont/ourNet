@@ -4,6 +4,8 @@
       = f.text_field :name, placeholder: 'Enter name', autocomplete: 'off', required: true, class: 'five columns'
     .row
       = f.text_area :description, placeholder: 'Enter description', autocomplete: 'off', class: 'five columns'
+    .row
+      = f.text_field :youtube_url, placeholder: 'Enter YouTube video url', autocomplete: 'off', class: 'five columns'
     - if method == 'POST'
       .row
         = f.fields_for :images do |builder|

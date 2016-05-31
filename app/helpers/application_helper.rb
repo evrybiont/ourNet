@@ -71,6 +71,6 @@ module ApplicationHelper
 
   def youtube_video(url)
     id = url.split('=').last
-    content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{id}")
+    content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{id}", allowfullscreen: true)
   end
 end
