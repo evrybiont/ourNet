@@ -56,6 +56,16 @@ module Papercrop
       attachment      = attachment.to_sym
       puts 'attachment   -' + attachment.inspect
 
+      #puts 'self'
+      #puts self.inspect
+      #puts self.class
+
+      puts 'obj   - ' + self.object.inspect
+      puts
+
+      puts 'aaaaaaaaaaaaaaaaaa  - ' + self.object.image_geometry(attachment, :original).inspect
+
+
       original_width  = self.object.image_geometry(attachment, :original).width.to_i
       puts 'original_width   - ' + original_width.inspect
 
