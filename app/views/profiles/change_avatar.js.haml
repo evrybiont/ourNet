@@ -1,18 +1,18 @@
 - if params[:crop_avatar]
-  $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
+  $('#flash').replaceWith("#{j (render 'layouts/box/flash')}");
   $('.menu').show();
   $('.stuff').html("#{j (render 'layouts/box/profile_sidebar')}");
   $('.stuff').append("#{j (render 'settings')}");
-  new Behavior.Flash()
-  new Behavior.Profile()
-  new Behavior.Avatar()
-  $('.spinner-wrap').hide()
+  $('.spinner-wrap').hide();
+  new Behavior.Flash();
+  new Behavior.Profile();
+  new Behavior.Avatar();
 - elsif flash[:error]
-  $('#flash').replaceWith("#{j (render 'layouts/box/flash')}")
-  new Behavior.Flash(6000)
-  new Behavior.Profile()
-  new Behavior.Avatar()
-  $('.spinner-wrap').hide()
+  $('#flash').replaceWith("#{j (render 'layouts/box/flash')}");
+  $('.spinner-wrap').hide();
+  new Behavior.Flash(6000);
+  new Behavior.Profile();
+  new Behavior.Avatar();
 - else
   $('.menu').hide();
   $('.stuff').html("#{j (render 'crop_avatar')}");
@@ -20,4 +20,4 @@
   setTimeout(function(){
   $('.spinner-wrap').hide()
   }, 3000);
-  new Behavior.Spinner()
+  new Behavior.Spinner();
