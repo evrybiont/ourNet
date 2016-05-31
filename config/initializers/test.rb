@@ -46,6 +46,7 @@ module Papercrop
     # @param attachment [Symbol] attachment name
     # @param opts [Hash]
     def cropbox(attachment, opts = {})
+      puts '==='*300
       attachment      = attachment.to_sym
       original_width  = self.object.image_geometry(attachment, :original).width.to_i
       original_height = self.object.image_geometry(attachment, :original).height.to_i
