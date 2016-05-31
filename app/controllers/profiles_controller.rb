@@ -27,12 +27,8 @@ class ProfilesController < ApplicationController
   end
 
   def change_avatar
-    puts '###################===============#############################################'
-    puts params_avatar
-
     if u.update params_avatar
       flash.now[:success] = 'Avatar has been changed'
-      puts '==================DONE======================================================='
     else
       flash.now[:error] = u.errors.full_messages.first
     end
