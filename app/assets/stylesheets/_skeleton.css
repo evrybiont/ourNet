@@ -435,6 +435,8 @@ there.
   #chop-hd-container .head .three.columns,
   #chop-hd-container .head .one.columns,
   .stuff .chop .two.columns,
+  footer .email,
+  footer .right,
   .stuff .chop .actions {text-align: center;}
 
   .stuff .chop .image {width: 248px;}
@@ -473,6 +475,7 @@ there.
   /*.stuff #pre-setting .ten.columns,*/
   .stuff .u-chops .add-chop,
   #sidebar .menu,
+  footer .right,
   .navbar .nav-menu {text-align: right;}
 
   .stuff #setting .three.columns.avatar,
@@ -487,6 +490,7 @@ there.
 
   /*.stuff #pre-setting .two.columns,*/
   .navbar .logo,
+  footer .email,
   .stuff .u-chops .u-chop .nine.columns {text-align: left;}
 
   .stuff #setting .two.columns.save {text-align: end;}
