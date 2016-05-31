@@ -21,6 +21,18 @@ body {
   margin: 0;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: table;
+}
+
+footer {
+  display: table-row !important;
+  height: 26px;
+}
+
 /* HTML5 display definitions
    ========================================================================== */
 
@@ -46,6 +58,14 @@ section,
 summary {
   display: block;
 }
+
+/*footer {*/
+/*background-color: #f5f5f5;*/
+/*bottom: 0;*/
+/*height: 60px;*/
+/*position: absolute !important;*/
+/*width: 100%;*/
+/*}*/
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
