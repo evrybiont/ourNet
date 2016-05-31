@@ -16,6 +16,6 @@ test:
 
 production:
   <<: *default
-  database: mighty-citadel-46136_production
-  username: mighty-citadel-46136
+  database: ukraine_custom_culture_production
+  username: ukraine_custom_culture
   password: <%= ENV['OURNET_DATABASE_PASSWORD'] %>
