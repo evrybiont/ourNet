@@ -26,6 +26,7 @@ gem 'autoprefixer-rails'
 gem 'papercrop', '~> 0.3.0'
 gem 'socialization'
 gem 'wiselinks'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
