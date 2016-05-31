@@ -25,7 +25,6 @@ gem 'autoprefixer-rails'
 gem 'papercrop'
 gem 'socialization'
 gem 'wiselinks'
-gem 'mediaelement_rails'
 
 group :development, :test do
   gem 'byebug'
