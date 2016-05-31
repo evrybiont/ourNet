@@ -70,6 +70,7 @@ class ChopsController < ApplicationController
       :description,
       :new_images,
       :slug,
+      :youtube_url,
       images_attributes: [:id, :data, :title, :description, :_destroy]
     )
   end

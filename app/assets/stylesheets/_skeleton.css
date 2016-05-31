@@ -431,6 +431,9 @@ there.
   .stuff #setting .save,
   .stuff #setting .save,
   .stuff #pre_setting,
+  #chop-hd-container .head .eight.columns,
+  #chop-hd-container .head .three.columns,
+  #chop-hd-container .head .one.columns,
   .stuff .chop .actions {text-align: center;}
 
   .stuff .chop .image {width: 100%}
@@ -444,6 +447,8 @@ there.
     position: absolute;
     text-overflow: ellipsis;
   }
+
+  #chop-hd-container .head .owner {margin-top: 10px;}
   /*========================*/
 }
 
