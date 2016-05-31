@@ -105,5 +105,5 @@ Rails.application.configure do
     s3_protocol: :https
   }
 
-  Paperclip.options[:command_path] = '/app/vendor/imagemagick/bin/'
+  #Paperclip.options[:command_path] = '/app/vendor/imagemagick/bin/'
 end
