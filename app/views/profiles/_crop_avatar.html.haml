@@ -1,7 +1,6 @@
 = form_for u, url: change_avatar_profile_path, method: 'put', remote: true do |f|
   = hidden_field_tag :crop_avatar
   .row.gn-c
-    = f.cropbox :avatar
   .row.gn-c
     = f.crop_preview :avatar
   .row.gn-c
