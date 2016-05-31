@@ -434,9 +434,10 @@ there.
   #chop-hd-container .head .eight.columns,
   #chop-hd-container .head .three.columns,
   #chop-hd-container .head .one.columns,
+  .stuff .chop .two.columns,
   .stuff .chop .actions {text-align: center;}
 
-  .stuff .chop .image {width: 100%}
+  .stuff .chop .image {width: 248px;}
 
   .stuff .u-chops .u-chop .one.column {width: 33.3333333333%;}
 
@@ -449,12 +450,13 @@ there.
   }
 
   #chop-hd-container .head .owner {margin-top: 10px;}
+
+  .navbar .nav-logo {width: 150px}
   /*========================*/
 }
 
 @media (min-width: 350px) {
   /*Dashboard log out user*/
-  .stuff .chop .image {width: auto}
   /*========================*/
 }
 
@@ -464,6 +466,7 @@ there.
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
+  .navbar .nav-menu {margin-top: 51px}
   .stuff .u-chops .u-chop {margin-bottom: 0}
 
   /*Dashboard log out user*/
@@ -478,7 +481,8 @@ there.
   .stuff #pre_setting .two.columns,
   .stuff #setting .nine.columns,
   .stuff .row.chop .four.columns,
-  .stuff .row.chop .seven.columns,
+  .stuff .row.chop .five.columns,
+  .stuff .row.chop .two.columns,
   .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
 
   /*.stuff #pre-setting .two.columns,*/
@@ -500,17 +504,27 @@ there.
 /* Larger than tablet */
 @media (min-width: 750px) {
   /*Dashboard log out user*/
-  .stuff .row.chop .four.columns {width: 30.6666666667%;}
-  .stuff .row.chop .seven.columns {margin-left: 4%; width: 56.6666666667%;}
+  .stuff .row.chop .four.columns {width: 39.3333333333%;}
+  .stuff .row.chop .five.columns {margin-left: 4%; width: 30.6666666667%;}
+  .stuff .row.chop .two.columns {margin-left: 4%; width: 13.3333333333%;}
   .stuff .row.chop .one.column {margin-left: 4%; width: 4.66666666667%;}
   .stuff #pre_setting .three.columns.avatar {width: 36%;}
   .stuff #pre_setting .ten.columns {margin-left: 4%; width: 60%; text-align: left;}
 
-  .stuff .chop .image {width: 100%}
   .stuff #pre_setting .avatar,
+  .stuff .row.chop .avatar,
   .stuff .chop .name {text-align: left;}
   .stuff .chop .actions {text-align: right;}
   /*========================*/
+}
+
+@media (min-height: 850px) {
+  body {
+    background-image: image-url('main-hot-rod.png');
+    background-attachment: fixed;
+    background-position: 110% 108%;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Larger than desktop */
@@ -519,7 +533,7 @@ there.
   body {
     background-image: image-url('main-hot-rod.png');
     background-attachment: fixed;
-    background-position: 110% 130%;
+    background-position: 110% 110%;
     background-repeat: no-repeat;
   }
 
@@ -535,17 +549,11 @@ there.
   .stuff #detail_user .nine.columns {margin-left: 4%; width: 67%;}
 
   #detail_user .data .email span{max-width: 21%;}
+
+  .stuff .row.chop .four.columns {width: 30.6666666667%;}
+  .stuff .row.chop .five.columns {margin-left: 4%; width: 39.3333333333%;}
   /*========================*/
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
-
-@media (min-height: 850px) {
-  body {
-    background-image: image-url('main-hot-rod.png');
-    background-attachment: fixed;
-    background-position: 110% 108%;
-    background-repeat: no-repeat;
-  }
-}
