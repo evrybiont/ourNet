@@ -2,7 +2,10 @@ App.registerBehavior('Flash')
 
 class Behavior.Flash
   constructor: (delay) ->
-    console.log('msg delay time is - ' + delay)
+    if Number.isInteger(delay)
+      time = delay
+      console.log('msg delay time is - ' + time)
+
     setTimeout (->
       $('.flash-message').fadeOut '300'
-    ), delay || 4000
+    ), time || 4000
