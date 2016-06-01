@@ -62,10 +62,36 @@ module ApplicationHelper
     u.follows?(user) ? 'unfollow' : 'follow'
   end
 
-  def blank_content data
+  def star_blank_content data
     if data.blank?
       who = u.id == params[:id].to_i ? 'You' : @user.name
-      content_tag(:p, "#{who} don’t have any starred chops yet.", class: 'blank-content')
+      if who == 'You'
+        msg = "You don’t have any starred chops yet."
+      else
+        msg = "#{who} doesn’t have any starred chops yet."
+      end
+      content_tag(:p, msg, class: 'blank-content')
+    end
+  end
+
+  def people_blank_content data, type
+    if data.blank?
+      who = u.id == params[:id].to_i ? 'You' : @user.name
+      if type == 'followers'
+        if who == 'You'
+          msg = "You don’t have any followers."
+        else
+          msg = "#{who} doesn’t have any followers."
+        end
+      else
+        if who == 'You'
+          msg = "You aren’t following anybody."
+        else
+          msg = "#{who} isn’t following anybody."
+        end
+      end
+
+      content_tag(:p, msg, class: 'blank-content')
     end
   end
 

@@ -12,5 +12,5 @@
       .row.created
         = star.created_at.strftime("Starred on %e %b %Y")
     %hr
-  = blank_content @stars
+  = star_blank_content @stars
   %span{data: {behavior: 'Like'}}

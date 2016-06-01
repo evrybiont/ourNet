@@ -13,3 +13,4 @@
           - break
         = render partial: 'users/box/people', locals: {user: @users[i + step]}
       - step += 4
+  = people_blank_content @users, type
