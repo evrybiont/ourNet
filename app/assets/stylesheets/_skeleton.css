@@ -437,19 +437,23 @@ there.
   .stuff .chop .two.columns,
   footer .email,
   footer .right,
+  #detail_user .three.columns .data,
   .stuff .chop .actions {text-align: center;}
 
-  .stuff .chop .image {width: 248px;}
+  .stuff .chop .image {height: 150px; width: 250px;}
 
   .stuff .u-chops .u-chop .one.column {width: 33.3333333333%;}
 
+  #detail_user .avatar .male-avatar,
+  #detail_user .avatar .female-avatar {display: inline-table;}
   #detail_user .data .email span{
     margin-left: 5px;
     max-width: 80%;
     overflow: hidden;
-    position: absolute;
+    /*position: absolute;*/
     text-overflow: ellipsis;
   }
+
 
   #chop-hd-container .head .owner {margin-top: 10px;}
 
@@ -517,8 +521,19 @@ there.
 
   .stuff #pre_setting .avatar,
   .stuff .row.chop .avatar,
+  #detail_user .three.columns .data,
   .stuff .chop .name {text-align: left;}
   .stuff .chop .actions {text-align: right;}
+
+  #detail_user .data .email span{position: absolute;}
+  .stuff #detail_user .three.columns {width: 29%}
+  .stuff #detail_user .three.columns .avatar {text-align: left;}
+  .stuff #detail_user .three.columns hr,
+  .stuff #detail_user .three.columns .activity,
+  .stuff #detail_user .three.columns .f-btn {width: 230px;}
+  .stuff #detail_user .nine.columns {margin-left: 4%; width: 67%;}
+
+  #detail_user .data .email span{max-width: 21%;}
   /*========================*/
 }
 
@@ -544,15 +559,6 @@ there.
   .stuff #setting .three.columns.avatar {width: 25%; text-align: left;}
   .stuff #setting .nine.columns {width: 75%;}
   .stuff #setting .option label {float: right;}
-
-  .stuff #detail_user .three.columns {width: 29%}
-  .stuff #detail_user .three.columns .avatar {text-align: left;}
-  .stuff #detail_user .three.columns hr,
-  .stuff #detail_user .three.columns .activity,
-  .stuff #detail_user .three.columns .f-btn {width: 230px;}
-  .stuff #detail_user .nine.columns {margin-left: 4%; width: 67%;}
-
-  #detail_user .data .email span{max-width: 21%;}
 
   .stuff .row.chop .four.columns {width: 30.6666666667%;}
   .stuff .row.chop .five.columns {margin-left: 4%; width: 39.3333333333%;}
