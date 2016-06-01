@@ -4,4 +4,7 @@
   .row
     %p= @chop.name
   .row
-    %p.desc= @chop.description
+    %p.desc= @chop.description.html_safe
+  - if @chop.youtube_url.present?
+    .row.youtube-container
+      = youtube_video(@chop.youtube_url)

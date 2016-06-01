@@ -19,6 +19,6 @@
     #projector{data: {behavior: 'ImageGallery', data: @chop_images}}
   .row
     %p.desc= @chop.description
-  - if @chop.youtube_url
+  - if @chop.youtube_url.present?
     .row.youtube-container
       = youtube_video(@chop.youtube_url)

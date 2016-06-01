@@ -1,11 +1,11 @@
 $('#flash').replaceWith("#{j (render 'layouts/box/flash')}");
 $('.stuff').html("#{j (render partial: 'layouts/box/profile_sidebar')}");
-- if flash[:error]
+- if flash[:error].present?
   $('.stuff').append("#{j (render partial: 'chops/box/form', locals: {url: chops_path, method: 'POST'})}");
-  new Behavior.Spinner()
+  new Behavior.Spinner();
 - else
-  $('.stuff').append("#{j (render 'shared/chop_content')}");
-  new Behavior.ImageGallery()
+  $('.stuff').append("#{j (render partial: 'shared/chop_content')}");
+  new Behavior.ImageGallery();
   window.history.pushState('', '', "#{chop_path(@chop)}");
 new Behavior.Flash();
 $('.spinner-wrap').hide();
