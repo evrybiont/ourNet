@@ -56,9 +56,23 @@ a
   text-align: center
 
 .chop
-  margin-bottom: 35px
-  &:last-of-type
-    margin-bottom: 0px
+  font-family: Times New Roman
+  margin-bottom: 15px
+  position: relative
+  .image
+    border: 1px solid olive
+  .footer
+    position: absolute
+    bottom: 7px
+    width: 100.6%
+    background-color: rgba(209, 197, 172, 0.7)
+    .name
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+  &:hover
+    .image
+      border: 1px solid red
 
 .u-chops
   .add-chop

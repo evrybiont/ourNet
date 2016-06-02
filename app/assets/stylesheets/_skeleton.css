@@ -438,9 +438,9 @@ there.
   footer .email,
   footer .right,
   #detail_user .three.columns .data,
+  .stuff .chop .footer .eight.columns,
+  .stuff .chop .footer .four.columns,
   .stuff .chop .actions {text-align: center;}
-
-  .stuff .chop .image {height: 150px; width: 250px;}
 
   .stuff .u-chops .u-chop .one.column {width: 33.3333333333%;}
 
@@ -482,6 +482,7 @@ there.
   #sidebar .menu,
   footer .right,
   #chop-hd-container .head .four.columns,
+  .stuff .chop .footer .four.columns,
   .navbar .nav-menu {text-align: right;}
 
   .stuff #setting .three.columns.avatar,
@@ -497,6 +498,7 @@ there.
   /*.stuff #pre-setting .two.columns,*/
   .navbar .logo,
   footer .email,
+  .stuff .chop .footer .eight.columns,
   .stuff .u-chops .u-chop .nine.columns {text-align: left;}
 
   .stuff #setting .two.columns.save {text-align: end;}
