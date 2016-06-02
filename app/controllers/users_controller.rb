@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :check_permissions!
 
   def index
-    @users = User.order(created_at: :desc)
+    @users = User.active
     respond_formats
   end
 

@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :avatar, dimensions: { width: 1050, height: 1050 }
 
+  scope :active, ->{where(info_full: true).order(created_at: :desc)}
+
   class << self
     def from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
