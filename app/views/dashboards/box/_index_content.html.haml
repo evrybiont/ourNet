@@ -1,13 +1,7 @@
-- @chops.each do |chop|
-  .row.chop
-    .four.columns.avatar
-      = link_to dashboard_path(chop), title: chop.name, data: {push: true} do
-        = image_tag chop.image, class: 'image'
-    .five.columns.name
-      = chop.name
-    .two.columns
-      = fa_icon 'star', class: 'option'
-      %span= chop.likers_count
-    .one.column.actions
-      = link_to dashboard_path(chop), title: 'Show more', data: {push: true} do
-        = fa_icon 'external-link-square 2x', class: 'black-color'
+.row
+  .four.columns
+    = render partial: 'dashboards/box/chop', collection: @chops[0]
+  .four.columns
+    = render partial: 'dashboards/box/chop', collection: @chops[1]
+  .four.columns
+    = render partial: 'dashboards/box/chop', collection: @chops[2]

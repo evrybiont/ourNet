@@ -12,7 +12,7 @@ class DashboardsController < ApplicationController
   private
 
   def load_data
-    @chops = Chop.active
+    @chops = Chop.active.in_groups_of(3).transpose.map(&:compact)
   end
 
   def load_chop_info
