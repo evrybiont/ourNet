@@ -1,7 +1,10 @@
 #chop-hd-container.row
   .row.head
-    .eight.columns.name= @chop.name
-    .three.columns
+    .one.columns
+      = link_to user_path(@chop.user), title: @chop.user.name, data: {push: true} do
+        = image_tag @chop.user.avatar.url(:thumb), class: 'user-avatar'
+    .seven.columns.name= @chop.name
+    .four.columns.action
       .like
         - if u
           .like-click{title: like_title(false, @chop), data: {behavior: 'Like', action: like_chop_path(@chop)}}
@@ -12,9 +15,6 @@
             = fa_icon 'star', class: 'option'
             .title Starred
         .count= @chop.likers_count
-    .one.columns.owner
-      = link_to user_path(@chop.user), title: 'Власник', data: {push: true} do
-        = fa_icon 'user-secret 2x', class: 'black-color'
   .row
     .six.columns
       #projector{data: {behavior: 'ImageGallery', data: @chop_images}}

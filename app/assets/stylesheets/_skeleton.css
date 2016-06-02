@@ -431,8 +431,8 @@ there.
   .stuff #setting .save,
   .stuff #setting .save,
   .stuff #pre_setting,
-  #chop-hd-container .head .eight.columns,
-  #chop-hd-container .head .three.columns,
+  #chop-hd-container .head .seven.columns,
+  #chop-hd-container .head .four.columns,
   #chop-hd-container .head .one.columns,
   .stuff .chop .two.columns,
   footer .email,
@@ -454,12 +454,11 @@ there.
     text-overflow: ellipsis;
   }
 
-
-  #chop-hd-container .head .owner {margin-top: 10px;}
-
   .navbar .nav-logo {width: 150px}
 
   .youtube-container {margin-top: 25px;}
+  #chop-hd-container .head .action,
+  #chop-hd-container .head .name {padding-top: 10px;}
   /*========================*/
 }
 
@@ -482,6 +481,7 @@ there.
   .stuff .u-chops .add-chop,
   #sidebar .menu,
   footer .right,
+  #chop-hd-container .head .four.columns,
   .navbar .nav-menu {text-align: right;}
 
   .stuff #setting .three.columns.avatar,
@@ -510,6 +510,8 @@ there.
   {margin-left: 0; width: 100%;}
 
   .youtube-container {margin-top: 0px;}
+  #chop-hd-container .head .action {padding-top: 34px;}
+  #chop-hd-container .head .name {padding-top: 29px;}
   /*========================*/
 }
 
@@ -526,6 +528,7 @@ there.
   .stuff #pre_setting .avatar,
   .stuff .row.chop .avatar,
   #detail_user .three.columns .data,
+  #chop-hd-container .head .seven.columns,
   .stuff .chop .name {text-align: left;}
   .stuff .chop .actions {text-align: right;}
 
