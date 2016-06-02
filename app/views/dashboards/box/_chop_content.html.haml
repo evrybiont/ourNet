@@ -1,7 +1,7 @@
 #chop-hd-container.row
   .row.head
     .one.columns
-      = link_to user_path(@chop.user), title: @chop.user.name, data: {push: true} do
+      = link_to user_path(@chop.user), title: "Owner is #{@chop.user.name}", id: 'info-msg', class: 'info-msg', data: {push: true, user: u.present?, behavior: 'Info'} do
         = image_tag @chop.user.avatar.url(:thumb), class: 'user-avatar'
     .seven.columns.name= @chop.name
     .four.columns.action
@@ -11,7 +11,7 @@
             = fa_icon 'star', class: 'option'
             = like_title(true, @chop)
         - else
-          .like-click{title: 'Потрібно залогінитись щоб проголосувати'}
+          .like-click.info-msg{title: 'Потрібно залогінитись щоб проголосувати'}
             = fa_icon 'star', class: 'option'
             .title Starred
         .count= @chop.likers_count
