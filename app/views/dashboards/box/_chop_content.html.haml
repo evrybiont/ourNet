@@ -16,9 +16,11 @@
       = link_to user_path(@chop.user), title: 'Власник', data: {push: true} do
         = fa_icon 'user-secret 2x', class: 'black-color'
   .row
-    #projector{data: {behavior: 'ImageGallery', data: @chop_images}}
+    .six.columns
+      #projector{data: {behavior: 'ImageGallery', data: @chop_images}}
+    - if @chop.youtube_url.present?
+      .six.columns
+        .youtube-container
+          = youtube_video(@chop.youtube_url)
   .row
     %p.desc= @chop.description
-  - if @chop.youtube_url.present?
-    .row.youtube-container
-      = youtube_video(@chop.youtube_url)

@@ -458,6 +458,8 @@ there.
   #chop-hd-container .head .owner {margin-top: 10px;}
 
   .navbar .nav-logo {width: 150px}
+
+  .youtube-container {margin-top: 25px;}
   /*========================*/
 }
 
@@ -506,6 +508,8 @@ there.
   #detail_user .three.columns,
   #detail_user .nine.columns
   {margin-left: 0; width: 100%;}
+
+  .youtube-container {margin-top: 0px;}
   /*========================*/
 }
 
