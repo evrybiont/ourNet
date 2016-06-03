@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   resources :videos, only: :index
   resources :photos, only: :index
+  resources :about_us, only: :index
 
   resources :chops do
     put 'like', on: :member

@@ -14,8 +14,12 @@
           = fa_icon 'user 2x', class: 'black-color'
         = link_to profile_path(u), data: {push: true}, title: 'Setting' do
           = fa_icon 'cog 2x', class: 'black-color'
+        = link_to about_us_path, data: {push: true}, title: 'About Us' do
+          = fa_icon 'question-circle 2x', class: 'black-color'
         = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out' do
           = fa_icon 'sign-out 2x', class: 'black-color'
       - else
+        = link_to about_us_path, data: {push: true}, title: 'About Us' do
+          = fa_icon 'question-circle 2x', class: 'black-color'
         = link_to new_user_session_path, title: 'Sign In' do
           = fa_icon 'sign-in 2x', class: 'black-color'
