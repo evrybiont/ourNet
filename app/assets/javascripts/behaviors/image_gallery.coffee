@@ -2,4 +2,6 @@ App.registerBehavior('ImageGallery')
 
 class Behavior.ImageGallery
   constructor: ()->
-    $('#projector').knack(data: $('#projector').data('data'))
+    setTimeout (->
+      $('#projector').knack(data: $('#projector').data('data'))
+    ), 1500

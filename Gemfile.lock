@@ -130,7 +130,7 @@ GEM
     json (1.8.3)
     json_pure (1.8.3)
     jwt (1.5.1)
-    knack-rails (1.0.0)
+    knack-rails (2.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
