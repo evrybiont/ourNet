@@ -440,6 +440,7 @@ there.
   #detail_user .three.columns .data,
   .stuff .chop .footer .eight.columns,
   .stuff .chop .footer .four.columns,
+  .stuff #detail_user .tabcontent #chops,
   .stuff .chop .actions {text-align: center;}
 
   .stuff .u-chops .u-chop .one.column {width: 33.3333333333%;}
@@ -514,6 +515,11 @@ there.
   .youtube-container {margin-top: 0px;}
   #chop-hd-container .head .action {padding-top: 34px;}
   #chop-hd-container .head .name {padding-top: 29px;}
+
+  .stuff #detail_user .tabcontent #chops {text-align: none;}
+  .stuff #detail_user .tabcontent #chops .one.columns{width: 10%; text-align: left;}
+  .stuff #detail_user .tabcontent #chops .nine.columns{margin-left: 0; width: 70%; text-align: left;}
+  .stuff #detail_user .tabcontent #chops .two.columns{margin-left: 0; width: 20%; text-align: right;}
   /*========================*/
 }
 
@@ -535,12 +541,12 @@ there.
   .stuff .chop .actions {text-align: right;}
 
   #detail_user .data .email span{position: absolute;}
-  .stuff #detail_user .three.columns {width: 29%}
+  .stuff #detail_user .three.columns {width: 39%;}
   .stuff #detail_user .three.columns .avatar {text-align: left;}
   .stuff #detail_user .three.columns hr,
   .stuff #detail_user .three.columns .activity,
   .stuff #detail_user .three.columns .f-btn {width: 230px;}
-  .stuff #detail_user .nine.columns {margin-left: 4%; width: 67%;}
+  .stuff #detail_user .nine.columns {margin-left: 0; width: 61%;}
 
   #detail_user .data .email span{max-width: 21%;}
   /*========================*/
@@ -558,6 +564,10 @@ there.
 /* Larger than desktop */
 @media (min-width: 1000px) {
   /*Dashboard log out user*/
+  .stuff #detail_user .three.columns {width: 30%;}
+  .stuff #detail_user .nine.columns {margin-left: 2%; width: 68%;}
+
+
   body {
     background-image: image-url('main-hot-rod.png');
     background-attachment: fixed;
@@ -575,4 +585,7 @@ there.
 }
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .stuff #detail_user .three.columns {width: 22%;}
+  .stuff #detail_user .nine.columns {margin-left: 4%; width: 74.0%;}
+}

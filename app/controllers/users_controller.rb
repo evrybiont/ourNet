@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     load_user
+    @chops = @user.chops.order(created_at: :desc)
     respond_formats
   end
 
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
     elsif @page == 'followers'
       @users = @user.followers(User).sort_by(&:created_at)
     end
+    @chops = @user.chops.order(created_at: :desc)
     respond_formats
   end
 

@@ -99,4 +99,16 @@ module ApplicationHelper
     id = url.split('=').last
     content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{id}", allowfullscreen: true)
   end
+
+  def tabs_blank_content term, data
+    if data.blank?
+      who = u.id == params[:id].to_i ? 'You' : @user.name
+      if who == 'You'
+        msg = "You don’t have any #{term} yet."
+      else
+        msg = "#{who} doesn’t have any #{term} yet."
+      end
+      content_tag(:p, msg, class: 'blank-content')
+    end
+  end
 end

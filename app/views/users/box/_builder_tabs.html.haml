@@ -1,0 +1,28 @@
+.nine.columns.options{data: {behavior: 'Tabs'}}
+  .row.utabs
+    .four.columns
+      = link_to '#chops' do
+        .tablink.display Chops
+    .four.columns
+      = link_to '#music' do
+        .tablink Music
+    .four.columns
+      = link_to '#music' do
+        .tablink Services
+
+  .row.tabcontent
+    .twelve.columns#chops
+      - @chops.each do |chop|
+        .row
+          .one.columns.ticon
+            = fa_icon 'legal'
+          .nine.columns.name
+            = link_to chop.name, dashboard_path(chop), title: chop.name
+          .two.columns.star
+            %span= chop.likers_count
+            = fa_icon 'star'
+      = tabs_blank_content 'chops', @chops
+    .twelve.columns.hd#music
+      = tabs_blank_content 'music', []
+    .twelve.columns.hd#services
+      = tabs_blank_content 'services', []

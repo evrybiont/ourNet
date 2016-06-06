@@ -34,6 +34,4 @@
         .f-btn
           = follow_button('profile', nil, @user)
 
-
-  .nine.columns.options
-    Another content
+  = render "users/box/#{@user.user_type.downcase}_tabs"

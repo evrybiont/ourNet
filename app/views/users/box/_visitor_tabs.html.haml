@@ -1,0 +1,8 @@
+.nine.columns.options{data: {behavior: 'Tabs'}}
+  .row.utabs
+    .four.columns
+      = link_to '#music' do
+        .tablink.display Music
+  .row.tabcontent
+    .twelve.columns#music
+      = tabs_blank_content 'music', []
