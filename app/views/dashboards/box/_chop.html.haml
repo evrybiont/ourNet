@@ -1,10 +1,19 @@
 .chop
-  = link_to dashboard_path(chop), title: chop.name, data: {push: true} do
-    = image_tag chop.image, class: 'image'
+  .chop-img
+    = link_to dashboard_path(chop), title: chop.name, data: {push: true} do
+      .fade-container
+        .mask
+        = image_tag chop.image, class: 'image'
   .footer
-    .container
-      .row
-        .eight.columns.name{title: "#{chop.name}"}= chop.name
-        .four.columns
-          = fa_icon 'star', class: 'option'
-          %span= chop.likers_count
+    .row
+      .eight.columns.name{title: "#{chop.name}"}= chop.name
+      .four.columns
+        = fa_icon 'star', class: 'option'
+        %span= chop.likers_count
+    .row.end
+      .three.columns
+        = link_to user_path(chop.user), title: "Owner is #{chop.user.name}", id: 'info-msg', class: 'info-msg', data: {push: true, user: u.present?, behavior: 'Info'} do
+          = image_tag chop.user_avatar, class: 'user-avatar'
+      .nine.columns.owner
+        .name
+          =link_to chop.user_name, user_path(chop.user), id: 'info-msg', class: 'info-msg', data: {push: true, user: u.present?, behavior: 'Info'}

@@ -438,8 +438,6 @@ there.
   footer .email,
   footer .right,
   #detail_user .three.columns .data,
-  .stuff .chop .footer .eight.columns,
-  .stuff .chop .footer .four.columns,
   .stuff #detail_user .tabcontent #chops,
   .stuff .chop .actions {text-align: center;}
 
@@ -460,6 +458,11 @@ there.
   .youtube-container {margin-top: 25px;}
   #chop-hd-container .head .action,
   #chop-hd-container .head .name {padding-top: 10px;}
+
+  .stuff .chop .footer .eight.columns {text-align: left; width: 65%}
+  .stuff .chop .footer .four.columns {text-align: right; width: 35%;}
+  .stuff .chop .footer .end .three.columns {width: 22%;}
+  .stuff .chop .footer .end .nine.columns {width: 67%;}
   /*========================*/
 }
 
@@ -520,6 +523,11 @@ there.
   .stuff #detail_user .tabcontent #chops .one.columns{width: 10%; text-align: left;}
   .stuff #detail_user .tabcontent #chops .nine.columns{margin-left: 0; width: 70%; text-align: left;}
   .stuff #detail_user .tabcontent #chops .two.columns{margin-left: 0; width: 20%; text-align: right;}
+
+  .stuff .chop .footer .eight.columns {width: 65.3333333333%;}
+  .stuff .chop .footer .four.columns {width: 30.6666666667%;}
+  .stuff .chop .footer .end .three.columns {width: 30%;}
+  .stuff .chop .footer .end .nine.columns {width: 65%;}
   /*========================*/
 }
 
@@ -588,4 +596,8 @@ there.
 @media (min-width: 1200px) {
   .stuff #detail_user .three.columns {width: 22%;}
   .stuff #detail_user .nine.columns {margin-left: 4%; width: 74.0%;}
+
+  .stuff .chop .footer .end .three.columns {width: 40px;}
+  .stuff .chop .footer .end .nine.columns {width: 180px;}
+
 }

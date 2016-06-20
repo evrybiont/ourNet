@@ -26,4 +26,8 @@ class Chop < ActiveRecord::Base
   def image
     images.first.data.url(:original)
   end
+
+  def user_avatar
+    user.avatar.url(:thumb)
+  end
 end
