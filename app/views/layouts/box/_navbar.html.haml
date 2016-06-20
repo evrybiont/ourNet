@@ -15,6 +15,8 @@
         = link_to destroy_user_session_path, method: 'delete', title: 'Sign Out' do
           = fa_icon 'sign-out 2x', class: 'black-color'
       - else
+        = link_to root_path, data: {push: true}, title: 'Home' do
+          = fa_icon 'home 2x', class: 'black-color'
         = link_to about_us_path, data: {push: true}, title: 'About Us' do
           = fa_icon 'question-circle 2x', class: 'black-color'
         = link_to new_user_session_path, title: 'Sign In' do
