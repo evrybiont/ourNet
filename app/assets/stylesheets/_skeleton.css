@@ -408,13 +408,6 @@ there.
 
 @media (min-width: 280px) {
   /*Dashboard log out user*/
-  body {
-    background-image: image-url('main-hot-rod.png');
-    background-attachment: fixed;
-    background-position: 35% 130%;
-    background-repeat: no-repeat;
-  }
-
   .devise .three.columns {width: 230px;}
   .stuff .u-chops .u-chop {margin-bottom: 35px;}
 
@@ -423,7 +416,6 @@ there.
   #detail_user .avatar,
   #sidebar .menu,
   .navbar .title,
-  .navbar .logo,
   .navbar .nav-menu,
   .stuff .u-chops,
   .stuff .chop .avatar,
@@ -477,7 +469,6 @@ there.
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
-  .navbar .nav-menu {margin-top: 51px}
   .stuff .u-chops .u-chop {margin-bottom: 0}
 
   /*Dashboard log out user*/
@@ -500,7 +491,7 @@ there.
   .stuff .row.chop .one.column {margin-left: 0; width: 100%;}
 
   /*.stuff #pre-setting .two.columns,*/
-  .navbar .logo,
+  .navbar .title,
   footer .email,
   .stuff .chop .footer .eight.columns,
   .stuff .u-chops .u-chop .nine.columns {text-align: left;}
@@ -561,12 +552,6 @@ there.
 }
 
 @media (min-height: 850px) {
-  body {
-    background-image: image-url('main-hot-rod.png');
-    background-attachment: fixed;
-    background-position: 110% 108%;
-    background-repeat: no-repeat;
-  }
 }
 
 /* Larger than desktop */
@@ -575,13 +560,6 @@ there.
   .stuff #detail_user .three.columns {width: 30%;}
   .stuff #detail_user .nine.columns {margin-left: 2%; width: 68%;}
 
-
-  body {
-    background-image: image-url('main-hot-rod.png');
-    background-attachment: fixed;
-    background-position: 110% 110%;
-    background-repeat: no-repeat;
-  }
 
   .stuff #setting .three.columns.avatar {width: 25%; text-align: left;}
   .stuff #setting .nine.columns {width: 75%;}

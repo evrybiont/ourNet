@@ -1,12 +1,8 @@
 .navbar
-  .row.title
-    %span.main-title Broken Rules (BETA VERSION, NOT MOBILE YET)
   .row
-    .four.columns.logo
-      = link_to root_path, data: {push: true}, class: 'navbar-brand' do
-        = image_tag 'logo3.png', class: 'nav-logo'
-
-    .eight.columns.nav-menu
+    .seven.columns.title
+      %span.main-title Broken Rules (BETA VERSION)
+    .five.columns.nav-menu
       - if current_user
         = link_to root_path, data: {push: true}, title: 'Home' do
           = fa_icon 'home 2x', class: 'black-color'

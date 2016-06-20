@@ -6,14 +6,18 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-<body class='container'>
-  <div id='media'><audio id='audio_player'></audio></div>
-  <%= render 'layouts/box/navbar' %>
-  <%= render 'layouts/box/flash' %>
-  <%= render 'layouts/box/spinner' %>
-  <div class='stuff'>
-    <%= yield %>
+<body class='container-fluid'>
+  <div class='container mc'>
+    <div id='media'><audio id='audio_player'></audio></div>
+    <%= render 'layouts/box/navbar' %>
+    <%= render 'layouts/box/flash' %>
+    <%= render 'layouts/box/spinner' %>
+    <div class='stuff'>
+      <%= yield %>
+    </div>
   </div>
+  <%= render 'layouts/box/left_img_navbar'%>
+  <%= render 'layouts/box/right_img_navbar'%>
   <%= render 'layouts/box/footer' %>
 </body>
 </html>

@@ -13,7 +13,18 @@
 @import 'spinner';
 @import 'youtube-container';
 @import 'about_us';
+@import 'images_navbars';
 
 a {
   text-decoration: none;
+}
+
+body {
+  background-color: #e9e9e9;
+  position: relative;
+}
+
+.mc {
+  margin-bottom: 30px;
+  z-index: 100;
 }
