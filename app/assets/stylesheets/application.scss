@@ -20,11 +20,34 @@ a {
 }
 
 body {
-  background-color: #e9e9e9;
+  background-color: #f7f7f9;
   position: relative;
 }
 
 .mc {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   z-index: 100;
+}
+
+@font-face {
+  font-family: 'JollyLodger-Regular';
+  src: url(/assets/jolly-lodger-regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SKULL';
+  src: url(/assets/skull.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'URGH';
+  src: url(/assets/urgh.otf) format('opentype');
+}
+
+.jl-f {
+  font-family: 'JollyLodger-Regular';
+}
+
+.ur-f {
+  font-family: 'URGH';
 }
