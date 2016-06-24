@@ -12,3 +12,5 @@ class Behavior.Info
               '</div>'
         $('#flash').html(msg)
         new Behavior.Flash()
+        $('html, body').animate({ scrollTop: 0 }, 'slow')
+        $('html, body').stop(true, true)
